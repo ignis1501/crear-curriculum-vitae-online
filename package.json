@@ -1,0 +1,16 @@
+{
+  "name": "curriculumweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"git:push": "git push https://github.com/ignis1501/curriculum-web main",
+	"git:pull" : "git pull https://github.com/ignis1501/curriculum-web",
+	"node:test": "node ./test/javascript.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
