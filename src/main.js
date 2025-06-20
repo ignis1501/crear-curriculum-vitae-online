@@ -84,9 +84,6 @@ document.querySelector('#app').innerHTML = `
 	<div>
 		<button onClick="switchFormulariDades()">Mostrar/Ocultar entrada de datos</button>
 	</div>
-	<script src="index.js"></script>
-	<script type="module" src="./test/javascript.test.js"></script>
-	<script src="./webcomponents/DadesPersonals.js"></script>
 `
 
 //setupCounter(document.querySelector('#counter'))
