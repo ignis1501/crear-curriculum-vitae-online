@@ -263,5 +263,5 @@ const eliminarElementAnterior = (event, input) => {
 	}
 }
 
-
+//export const dom = document.querySelector('body');
 /**EVENTLISTENER */
