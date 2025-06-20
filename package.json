@@ -7,13 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "git:push": "git push https://github.com/ignis1501/curriculum-web main",
     "git:pull": "git pull https://github.com/ignis1501/curriculum-web",
-    "node:test": "node ./test/javascript.test.js"
+    "node:test": "node ./test/javascript.test.js",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
-    "chalk": "^5.4.1"
+    "chalk": "^5.4.1",
+    "vite": "^6.3.5"
   }
 }
