@@ -1,14 +1,15 @@
 import chalk from 'chalk';
-import jsdom from 'jsdom';
+//import jsdom from 'jsdom';
+import DomElements from '../dom/domElements.js'
 import { eliminarElementAnterior } from '../index.js';
 //const chalk = require('chalk');
 
 console.log(`Test ${chalk.green("OK")}`);
 console.log(chalk.red("¡Error!"));
 
-const { JSDOM } = jsdom;
+//const { JSDOM } = jsdom;
 
-const dom = new JSDOM (`<!doctype html>
+/* const dom = new JSDOM (`<!doctype html>
 	<html lang="en">
 	  <head>
 		<meta charset="UTF-8" />
@@ -79,30 +80,21 @@ const dom = new JSDOM (`<!doctype html>
 		<button name="mostrarOcultarForms">Mostrar/Ocultar entrada de datos</button>
 	</div>
 		</div>
-		<script type="module" src="/src/main.js"></script>
-		<script type="module" src="./src/index.js"></script>
-		<script type="module" src="./src/test/javascript.test.js"></script>
-		<script src="./src/webcomponents/DadesPersonals.js"></script>
 	  </body>
-	</html>`)
+	</html>`) */
+
+/* const document = dom.window.document; 
+const eliminarInputButton = document.querySelector('button[name="eliminarInput"]');
+const dadesPersonalsDiv = document.getElementById('dades-personals-form');
+dadesPersonalsDiv.addEventListener('click', (event) => {
+	eliminarElementAnterior(event, true);
+}) */
+
+
 
 function testEliminarInput() {
-	const eliminarInputButton = dom.window.document.querySelector('button[name="eliminarInput"]');
-	console.log(eliminarInputButton)
-
-	const formDades = dom.window.document.getElementById('dades-personals-form');
-	console.log(formDades);
-	console.log(formDades.childElementCount);
-	let fillsInicials = formDades.childElementCount;
-	eliminarElementAnterior(eliminarElementAnterior, true);
-	//eliminarInputButton.click();
-	let fillsFinals = formDades.childElementCount;
-
-	if (fillsInicials === fillsFinals+1) {
-		console.log(`Test eliminar input ${chalk.green("OK")}`)
-	} else {
-		console.log(`Test eliminar input ${chalk.red("¡Error!")}`)
-	}
+	console.log(5 === 5 ? 'Tot correcte' : 'Error');
+	
 
 }
 

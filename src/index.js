@@ -1,3 +1,4 @@
+import DomElements from './dom/domElements.js'
 
 let dadesPersonals = {}
 let dadesEstudis = {}
@@ -6,43 +7,39 @@ let dadesProfesionals = {}
 console.log('index');
 
 /**ELEMENTS DOM *//**TODO TOTS FORA DE LES FUNCTIONS */
-const dadesPersonalsForm = document.getElementById('dades-personals-form');
+/* const dadesPersonalsForm = document.getElementById('dades-personals-form');
 const dadesProfesionalsForm = document.getElementById('div-form-profesio');
 const dadesEstudisForm = document.getElementById('div-form-estudis');
-console.log("dadesProfesionalsForm", dadesProfesionalsForm);
 const obtenirDadesButton = document.querySelector('button[name="obtenirDades"]');
-const mostrarOcultarFormsButton = document.querySelector('button[name="mostrarOcultarForms"]');
-//const afegirProfesioButton = document.querySelector('button[name="afegirProfesio"]');
-//const eliminarProfesioButton = document.querySelector('button[name="eliminarSeccio"]');
-console.log("dadesPersonalsForm", dadesPersonalsForm);
+const mostrarOcultarFormsButton = document.querySelector('button[name="mostrarOcultarForms"]'); */
 
 /**LISTENERS */
-dadesPersonalsForm.addEventListener('click', (event) => {
+DomElements.dadesPersonalsForm.addEventListener('click', (event) => {
 	event.preventDefault();
 	console.log(event.target)
 	if (event.target.name === 'eliminarInput') eliminarElementAnterior(event, true)
 	if (event.target.name === 'afegirDada') afegirDadaPersonal(event)
 })
 
-dadesProfesionalsForm.addEventListener('click', (event) => {
+DomElements.dadesProfesionalsForm.addEventListener('click', (event) => {
 	event.preventDefault();
 	console.log(event.target)
 	if (event.target.name === 'afegirProfesio') afegirProfesio(event)
 	if (event.target.name === 'eliminarSeccio') eliminarElementAnterior(event, false)
 })
 
-dadesEstudisForm.addEventListener('click', (event) => {
+DomElements.dadesEstudisForm.addEventListener('click', (event) => {
 	event.preventDefault();
 	console.log(event.target)
 	if (event.target.name === 'afegirEstudis') afegirEstudis(event)
 	if (event.target.name === 'eliminarSeccio') eliminarElementAnterior(event, false)
 })
 
-obtenirDadesButton.addEventListener('click', () => {
+DomElements.obtenirDadesButton.addEventListener('click', () => {
 	obtenirDades();
 })
 
-mostrarOcultarFormsButton.addEventListener('click', () => {
+DomElements.mostrarOcultarFormsButton.addEventListener('click', () => {
 	switchFormulariDades();
 })
 
@@ -61,7 +58,7 @@ const afegirDadaPersonal = (event) => {
 	let divsDades = document.querySelectorAll('div[class="dades-personals"]');
 	
 	let htmlDadaPersonal = `<div name="divDada" class="dades-personals">
-			<input type="text" name="dada${divsDades.length-3}" data-tipus="dades-personals" placeholder="dada"/><button name="input">Eliminar</button>
+			<input type="text" name="dada${divsDades.length-3}" data-tipus="dades-personals" placeholder="dada"/><button name="eliminarInput">Eliminar</button>
 		</div>`
 	divsDades[divsDades.length-1].insertAdjacentHTML("afterEnd", htmlDadaPersonal);
 }
@@ -309,4 +306,4 @@ export const eliminarElementAnterior = (event, input) => {
 }
 
 
-
+//export default { eliminarElementAnterior }
