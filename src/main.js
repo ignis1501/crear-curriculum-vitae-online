@@ -18,11 +18,12 @@ import { setupCounter } from './counter.js'
 }
 
 loadTemplate(); */
-
+console.log('main');
 
 document.querySelector('#app').innerHTML = `
-  <div name="formularis">
-			<form id="dades-personals-form">
+	<div name="formularis">
+		<h2>Datos Personales</h2>
+		<form id="dades-personals-form">
 			<div name="divNom" class="dades-personals">
 				<input type="text" name="nombre" data-tipus="dades-personals" placeholder="Nombre completo"/>
 			</div>
@@ -33,56 +34,52 @@ document.querySelector('#app').innerHTML = `
 				<input type="email" name="email" data-tipus="dades-personals" placeholder="email"/>
 			</div>
 			<div name="divLinkedin" class="dades-personals">
-				<input type="text" name="linkedin" data-tipus="dades-personals" placeholder="linkedin"/><button onClick="eliminarElementAnterior(event, true)">Eliminar</button>
+				<input type="text" name="linkedin" data-tipus="dades-personals" placeholder="linkedin"/><button name="eliminarInput">Eliminar</button>
 			</div>
 			<div>
-				<button title="Añadir dato" onClick="afegirDadaPersonal(event)">+</button>
-				<button title="Eliminar dato" onClick="quitarDadaPersonal(event)">-</button>
+				<button name="afegirDada" title="Añadir dato" >+</button>
 			</div>
 		</form>
-		
-		<div name="div-form-estudis">
+			
+		<h2>Datos Académicos</h2>
+		<div id="div-form-estudis" name="div-form-estudis">			
 			<form name="dades-estudis-form">
 				<div name="divEstudis" class="dades-estudis">
 					<input name="data-estudis" placeholder="Fecha estudios"/>
 					<input name="nom-estudis" placeholder="Titulo estudios"/>
 					<input name="centre-estudis" placeholder="Centro estudios"/>
 				</div>
-				<button onClick="eliminarElementAnterior(event, false)">Eliminar</button>			
+				<button name="eliminarSeccio">Eliminar</button>			
 			</form>
 			<div>
-				<button title="Añadir Estudios"  onClick="afegirEstudis(event)">+</button>
-				<button title="Eliminar Estudios"  onClick="quitarEstudis(event)">-</button>
+				<button name="afegirEstudis" title="Añadir Estudios">+</button>
 			</div>
 		</div>
-		
-		
-		
-		<div name="div-form-profesio" class="dades-profesionals">
+			
+			
+		<h2>Datos Profesionales</h2>	
+		<div id="div-form-profesio" name="div-form-profesio" class="dades-profesionals">
 			<form id="dades-profesionals-form">
 				<input type="text" name="data-profesional" placeholder="Fechas"/>
 				<input type="text" name="nom-profesional" placeholder="Puesto"/>
 				<input type="text" name="centre-profesional" placeholder="Empresa"/>
-				<textarea name="detalls-profesional" placeholder="Detalles"></textarea>
-				<ul>
-				</ul>
-				<button onClick="crearLista(event)">Crear lista</button>
-				<button onClick="eliminarElementAnterior(event, false)">Eliminar</button>			
+				<textarea name="detalls-profesional" placeholder="Detalles"></textarea>				
+				<button name="eliminarSeccio">Eliminar</button>		
 			</form>
 			<div>
-				<button title="Añadir Experiencia"  onClick="afegirProfesio(event)">+</button>
-				<button title="Eliminar Experiencia"  onClick="quitarProfesio(event)">-</button>
+				<button name="afegirProfesio" title="Añadir Experiencia">+</button>
 			</div>		
 		</div>
 		
 		
 		<div>
-			<button onClick="obtenirDades()">Obtenir dades</button>
+			<button name="obtenirDades">Obtenir dades</button>
 		</div>
 
 	</div>
+
 	<div>
-		<button onClick="switchFormulariDades()">Mostrar/Ocultar entrada de datos</button>
+		<button name="mostrarOcultarForms">Mostrar/Ocultar entrada de datos</button>
 	</div>
 `
 

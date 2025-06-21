@@ -3,17 +3,65 @@ let dadesPersonals = {}
 let dadesEstudis = {}
 let dadesProfesionals = {}
 
-/**ELEMENTS DOM */
+console.log('index');
 
+/**ELEMENTS DOM *//**TODO TOTS FORA DE LES FUNCTIONS */
+const dadesPersonalsForm = document.getElementById('dades-personals-form');
+const dadesProfesionalsForm = document.getElementById('div-form-profesio');
+const dadesEstudisForm = document.getElementById('div-form-estudis');
+console.log("dadesProfesionalsForm", dadesProfesionalsForm);
+const obtenirDadesButton = document.querySelector('button[name="obtenirDades"]');
+const mostrarOcultarFormsButton = document.querySelector('button[name="mostrarOcultarForms"]');
+//const afegirProfesioButton = document.querySelector('button[name="afegirProfesio"]');
+//const eliminarProfesioButton = document.querySelector('button[name="eliminarSeccio"]');
+console.log("dadesPersonalsForm", dadesPersonalsForm);
+
+/**LISTENERS */
+dadesPersonalsForm.addEventListener('click', (event) => {
+	event.preventDefault();
+	console.log(event.target)
+	if (event.target.name === 'eliminarInput') eliminarElementAnterior(event, true)
+	if (event.target.name === 'afegirDada') afegirDadaPersonal(event)
+})
+
+dadesProfesionalsForm.addEventListener('click', (event) => {
+	event.preventDefault();
+	console.log(event.target)
+	if (event.target.name === 'afegirProfesio') afegirProfesio(event)
+	if (event.target.name === 'eliminarSeccio') eliminarElementAnterior(event, false)
+})
+
+dadesEstudisForm.addEventListener('click', (event) => {
+	event.preventDefault();
+	console.log(event.target)
+	if (event.target.name === 'afegirEstudis') afegirEstudis(event)
+	if (event.target.name === 'eliminarSeccio') eliminarElementAnterior(event, false)
+})
+
+obtenirDadesButton.addEventListener('click', () => {
+	obtenirDades();
+})
+
+mostrarOcultarFormsButton.addEventListener('click', () => {
+	switchFormulariDades();
+})
+
+/* afegirProfesioButton.addEventListener('click', (event) => {
+	afegirProfesio(event);
+}) */
+
+/* eliminarProfesioButton.addEventListener('click', (event) => {
+	eliminarElementAnterior(event, false);
+}) */
 
 
 const afegirDadaPersonal = (event) => {
-	event.preventDefault()	
+	//event.preventDefault()	
 
 	let divsDades = document.querySelectorAll('div[class="dades-personals"]');
 	
 	let htmlDadaPersonal = `<div name="divDada" class="dades-personals">
-			<input type="text" name="dada${divsDades.length-3}" data-tipus="dades-personals" placeholder="dada"/><button onClick="eliminarElementAnterior(event, true)">Eliminar</button>
+			<input type="text" name="dada${divsDades.length-3}" data-tipus="dades-personals" placeholder="dada"/><button name="input">Eliminar</button>
 		</div>`
 	divsDades[divsDades.length-1].insertAdjacentHTML("afterEnd", htmlDadaPersonal);
 }
@@ -39,7 +87,7 @@ const afegirEstudis = (event) => {
 			<input name="nom-estudis" placeholder="Titulo estudios"/>
 			<input name="centre-estudis" placeholder="Centro estudios"/>
 		</div>
-		<button onClick="eliminarElementAnterior(event, false)">Eliminar</button>
+		<button name="eliminarSeccio">Eliminar</button>
 	</form>
 	`; 
 	
@@ -57,7 +105,7 @@ const quitarEstudis = (event) => {
 		:	alert('No se puede eliminar el último elemento')
 }
 
-const crearLista = (event) => {
+/* const crearLista = (event) => {
 	event.preventDefault()
 	let elementPrevi = event.target.previousElementSibling;
 	let ul = `
@@ -101,10 +149,10 @@ const eliminarLi = (event) => {
 	
 
 
-}
+} */
 
 const afegirProfesio = (event) => {
-	event.preventDefault();
+	//event.preventDefault();
 
 	const divProfesio = document.querySelector('div[name="div-form-profesio"]');
 	const divFormProfesio = document.querySelectorAll('div[name="div-form-profesio"] form');
@@ -114,10 +162,7 @@ const afegirProfesio = (event) => {
 		<input type="text" name="nom-profesional" placeholder="Puesto"/>
 		<input type="text" name="centre-profesional" placeholder="Empresa"/>
 		<textarea name="detalls-profesional" placeholder="Detalles"></textarea>
-		<ul>
-		</ul>
-		<button onClick="crearLista(event)">Crear lista</button>
-		<button onClick="eliminarElementAnterior(event, false)">Eliminar</button>		
+		<button name="eliminarSeccio">Eliminar</button>		
 	<form>
 	`;
 	
@@ -251,8 +296,8 @@ const switchFormulariDades = () => {
 	:	divFormulariDades.style.display = 'none'
 }
 
-const eliminarElementAnterior = (event, input) => {
-	event.preventDefault();
+export const eliminarElementAnterior = (event, input) => {
+	//event.preventDefault();
 	if (input) {
 		console.log(event.target.previousElementSibling);
 		event.target.previousElementSibling.remove();//eliminar el germa anterior
@@ -263,5 +308,5 @@ const eliminarElementAnterior = (event, input) => {
 	}
 }
 
-//export const dom = document.querySelector('body');
-/**EVENTLISTENER */
+
+
