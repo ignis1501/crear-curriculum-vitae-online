@@ -104,7 +104,7 @@ function testButtonsDadesPersonals() {
 	let buttonsEsborrarInputs = document.querySelectorAll('button[name="eliminarInput"]');
 	const buttonAfegirInput = document.querySelector('button[name="afegirDada"]');
 
-	console.log(chalk.blue("Test fills inicials"));
+	console.log(chalk.blue("Test fills inicials Dades"));
 	let fillsInicialsForm = dadesPersonalForm.childElementCount;
 	console.log(fillsInicialsForm === 5 ? missatgeConsolaOk("Fills inicials correctes, 5") : missatgeConsolaError("Error fills inicials", fillsInicialsForm));
 
@@ -121,17 +121,67 @@ function testButtonsDadesPersonals() {
 	fillsActuals = dadesPersonalForm.childElementCount;
 	console.log(fillsActuals === 5 ? missatgeConsolaOk('Fill esborrat correctament') : missatgeConsolaError("Error en esborrar fill"));
 
-	console.log(missatgeConsolaOk('Proba missatge OK'));
-	console.log(missatgeConsolaError('Proba missatge Error'));
+/* 	console.log(missatgeConsolaOk('Proba missatge OK'));
+	console.log(missatgeConsolaError('Proba missatge Error')); */
 
 
 }
 
 function testButtonsDadesAcademiques() {
-	
+	/**Casos
+	 * *fills inicials
+	 * *afegir fill
+	 * *esborrar fill
+	 * *esborrar tots els fills
+	 * *afegir nou fill amb tots esborrats
+	 */
+	const estudisForm = DomElements.dadesEstudisForm;
+	const buttonAfegitEstudis = document.querySelector('button[name="afegirEstudis"]');
+
+	console.log(chalk.blue("Test fills inicials Estudis"));
+	let fillsInicials = estudisForm.childElementCount;
+	console.log((fillsInicials === 2) ? missatgeConsolaOk('Fills inicials correctes') : missatgeConsolaError('Error fills inicials'));
+
+	console.log(chalk.blue("Test afegir fills Estudis"));
+	fillsInicials = estudisForm.childElementCount;
+	buttonAfegitEstudis.click();
+	let fillsActuals = estudisForm.childElementCount;
+	console.log((fillsInicials + 1 === fillsActuals) ? missatgeConsolaOk('Afegit fills correctament') : missatgeConsolaError('Error afegir fill'));
+
+	console.log(chalk.blue("Test esborrar fill Estudis"));
+	let botonsEliminarEstudis = document.querySelectorAll('div[name="div-form-estudis"] button[name="eliminarSeccio"]');
+	fillsInicials = estudisForm.childElementCount;
+	botonsEliminarEstudis[botonsEliminarEstudis.length - 1].click();
+	fillsActuals = estudisForm.childElementCount;
+	console.log((fillsInicials -1 === fillsActuals) ? missatgeConsolaOk('Eliminat fill correctament') : missatgeConsolaError('Error eliminar fill'));
+
+	console.log(chalk.blue("Test afegir 3 fills Estudis"));
+	fillsInicials = estudisForm.childElementCount;
+	for(let i = 0; i < 3; i++) buttonAfegitEstudis.click();
+	fillsActuals = estudisForm.childElementCount;
+	console.log((fillsInicials + 3 === fillsActuals) ? missatgeConsolaOk('Afegit 3 fills correctament') : missatgeConsolaError('Error en afegir 3 fills'));
+
+	console.log(chalk.blue("Test esborrar tots els fills Estudis"));
+	botonsEliminarEstudis = document.querySelectorAll('div[name="div-form-estudis"] button[name="eliminarSeccio"]');
+	let i = 0;
+	while (i <= botonsEliminarEstudis.length -1) {
+		botonsEliminarEstudis[i].click();
+		i++;
+	}
+	fillsActuals = estudisForm.childElementCount;
+	console.log((1 === fillsActuals) ? missatgeConsolaOk('Eliminats tots els fills') : missatgeConsolaError('Error eliminar tots els fills'));
+
+	console.log(chalk.blue("Test afegir el primer fill Estudis"));
+	fillsInicials = estudisForm.childElementCount;
+	buttonAfegitEstudis.click();
+	fillsActuals = estudisForm.childElementCount;
+	console.log((fillsInicials + 1 === fillsActuals) ? missatgeConsolaOk('Afegit fills correctament') : missatgeConsolaError('Error afegir fill'));
+
 }
 
 
 
 
 testButtonsDadesPersonals();
+console.log(chalk.blue('---------------------------------'));
+testButtonsDadesAcademiques();
