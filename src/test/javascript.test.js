@@ -179,9 +179,63 @@ function testButtonsDadesAcademiques() {
 
 }
 
+function testButtonsDadesProfesionals() {
+	/**Casos
+	 * *fills inicials
+	 * *afegir fill
+	 * *esborrar fill
+	 * *esborrar tots els fills
+	 * *afegir nou fill amb tots esborrats
+	 */
+	const profesionalForm = DomElements.dadesProfesionalsForm;
+	const buttonAfegirProfesio = document.querySelector('button[name="afegirProfesio"]');
+
+	console.log(chalk.blue("Test fills inicials Profesionals"));
+	let fillsInicials = profesionalForm.childElementCount;
+	console.log((fillsInicials === 2) ? missatgeConsolaOk('Fills inicials correctes') : missatgeConsolaError('Error fills inicials'));
+
+	console.log(chalk.blue("Test afegir fills Profesio"));
+	fillsInicials = profesionalForm.childElementCount;
+	buttonAfegirProfesio.click();
+	let fillsActuals = profesionalForm.childElementCount;
+	console.log((fillsInicials + 1 === fillsActuals) ? missatgeConsolaOk('Afegit fills correctament') : missatgeConsolaError('Error afegir fill'));
+
+	console.log(chalk.blue("Test esborrar fill Profesio"));
+	let botonsEliminarProfesio = document.querySelectorAll('div[name="div-form-profesio"] button[name="eliminarSeccio"]');
+	fillsInicials = profesionalForm.childElementCount;
+	botonsEliminarProfesio[botonsEliminarProfesio.length - 1].click();
+	fillsActuals = profesionalForm.childElementCount;
+	console.log((fillsInicials -1 === fillsActuals) ? missatgeConsolaOk('Eliminat fill correctament') : missatgeConsolaError('Error eliminar fill'));
+
+	console.log(chalk.blue("Test afegir 3 fills Profesio"));
+	fillsInicials = profesionalForm.childElementCount;
+	for(let i = 0; i < 3; i++) buttonAfegirProfesio.click();
+	fillsActuals = profesionalForm.childElementCount;
+	console.log((fillsInicials + 3 === fillsActuals) ? missatgeConsolaOk('Afegit 3 fills correctament') : missatgeConsolaError('Error en afegir 3 fills'));
+
+	console.log(chalk.blue("Test esborrar tots els fills Profesio"));
+	botonsEliminarProfesio = document.querySelectorAll('div[name="div-form-profesio"] button[name="eliminarSeccio"]');
+	let i = 0;
+	while (i <= botonsEliminarProfesio.length -1) {
+		botonsEliminarProfesio[i].click();
+		i++;
+	}
+	fillsActuals = profesionalForm.childElementCount;
+	console.log((1 === fillsActuals) ? missatgeConsolaOk('Eliminats tots els fills') : missatgeConsolaError('Error eliminar tots els fills'));
+
+	console.log(chalk.blue("Test afegir el primer fill Profesio"));
+	fillsInicials = profesionalForm.childElementCount;
+	buttonAfegirProfesio.click();
+	fillsActuals = profesionalForm.childElementCount;
+	console.log((fillsInicials + 1 === fillsActuals) ? missatgeConsolaOk('Afegit fills correctament') : missatgeConsolaError('Error afegir fill'));
+
+}
+
 
 
 
 testButtonsDadesPersonals();
 console.log(chalk.blue('---------------------------------'));
 testButtonsDadesAcademiques();
+console.log(chalk.blue('---------------------------------'));
+testButtonsDadesProfesionals();

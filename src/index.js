@@ -6,13 +6,6 @@ let dadesProfesionals = {}
 
 console.log('index');
 
-/**ELEMENTS DOM *//**TODO TOTS FORA DE LES FUNCTIONS */
-/* const dadesPersonalsForm = document.getElementById('dades-personals-form');
-const dadesProfesionalsForm = document.getElementById('div-form-profesio');
-const dadesEstudisForm = document.getElementById('div-form-estudis');
-const obtenirDadesButton = document.querySelector('button[name="obtenirDades"]');
-const mostrarOcultarFormsButton = document.querySelector('button[name="mostrarOcultarForms"]'); */
-
 /**LISTENERS */
 DomElements.dadesPersonalsForm.addEventListener('click', (event) => {
 	event.preventDefault();
@@ -40,7 +33,7 @@ DomElements.obtenirDadesButton.addEventListener('click', () => {
 })
 
 DomElements.mostrarOcultarFormsButton.addEventListener('click', () => {
-	switchFormulariDades();
+	mostrarOcultarElement(DomElements.divFormulariDades);
 })
 
 /* afegirProfesioButton.addEventListener('click', (event) => {
@@ -286,24 +279,14 @@ const enviarCustomEvent = (enviarANomEvent) => {
 	}));
 }
 
-const switchFormulariDades = () => {
-	const divFormulariDades = document.querySelector('div[name="formularis"]');
-	(divFormulariDades.style.display === 'none')
-	?	divFormulariDades.style.display = ''
-	:	divFormulariDades.style.display = 'none'
+const mostrarOcultarElement = (element) => {
+	(element.style.display === 'none')
+	?	element.style.display = ''
+	:	element.style.display = 'none'
 }
 
-export const eliminarElementAnterior = (event) => {
-	//event.preventDefault();
-	/* if (input) {
-		console.log(event.target.previousElementSibling); */
-		//event.target.previousElementSibling.remove();//eliminar el germa anterior
-		event.target.parentNode.remove();//eliminar el node pare
-		//event.target.remove();//eliminar el mateix botó
-	/* } else {
-		console.log(event.target.parentNode);
-		event.target.parentNode.remove();
-	} */
+export const eliminarElementAnterior = (event) => {	
+	event.target.parentNode.remove();//eliminar el node pare
 }
 
 
