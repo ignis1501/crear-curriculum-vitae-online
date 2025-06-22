@@ -16,23 +16,23 @@ const mostrarOcultarFormsButton = document.querySelector('button[name="mostrarOc
 /**LISTENERS */
 DomElements.dadesPersonalsForm.addEventListener('click', (event) => {
 	event.preventDefault();
-	console.log(event.target)
-	if (event.target.name === 'eliminarInput') eliminarElementAnterior(event, true)
+	//console.log(event.target)
+	if (event.target.name === 'eliminarInput') eliminarElementAnterior(event)
 	if (event.target.name === 'afegirDada') afegirDadaPersonal(event)
 })
 
 DomElements.dadesProfesionalsForm.addEventListener('click', (event) => {
 	event.preventDefault();
-	console.log(event.target)
+	//console.log(event.target)
 	if (event.target.name === 'afegirProfesio') afegirProfesio(event)
-	if (event.target.name === 'eliminarSeccio') eliminarElementAnterior(event, false)
+	if (event.target.name === 'eliminarSeccio') eliminarElementAnterior(event)
 })
 
 DomElements.dadesEstudisForm.addEventListener('click', (event) => {
 	event.preventDefault();
-	console.log(event.target)
+	//console.log(event.target)
 	if (event.target.name === 'afegirEstudis') afegirEstudis(event)
-	if (event.target.name === 'eliminarSeccio') eliminarElementAnterior(event, false)
+	if (event.target.name === 'eliminarSeccio') eliminarElementAnterior(event)
 })
 
 DomElements.obtenirDadesButton.addEventListener('click', () => {
@@ -293,16 +293,17 @@ const switchFormulariDades = () => {
 	:	divFormulariDades.style.display = 'none'
 }
 
-export const eliminarElementAnterior = (event, input) => {
+export const eliminarElementAnterior = (event) => {
 	//event.preventDefault();
-	if (input) {
-		console.log(event.target.previousElementSibling);
-		event.target.previousElementSibling.remove();//eliminar el germa anterior
-		event.target.remove();//eliminar el mateix botó
-	} else {
+	/* if (input) {
+		console.log(event.target.previousElementSibling); */
+		//event.target.previousElementSibling.remove();//eliminar el germa anterior
+		event.target.parentNode.remove();//eliminar el node pare
+		//event.target.remove();//eliminar el mateix botó
+	/* } else {
 		console.log(event.target.parentNode);
 		event.target.parentNode.remove();
-	}
+	} */
 }
 
 

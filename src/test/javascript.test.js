@@ -4,8 +4,8 @@ import DomElements from '../dom/domElements.js'
 import { eliminarElementAnterior } from '../index.js';
 //const chalk = require('chalk');
 
-console.log(`Test ${chalk.green("OK")}`);
-console.log(chalk.red("¡Error!"));
+/* console.log(`Test ${chalk.green("OK")}`);
+console.log(chalk.red("¡Error!")); */
 
 //const { JSDOM } = jsdom;
 
@@ -90,12 +90,48 @@ dadesPersonalsDiv.addEventListener('click', (event) => {
 	eliminarElementAnterior(event, true);
 }) */
 
+const missatgeConsolaOk = (missatgeOK) => {
+	return `${chalk.green(missatgeOK)} ${chalk.whiteBright.bgGreen.bold("OK")}`
+}
+const missatgeConsolaError = (missatgeError) => {
+	return `${chalk.red(missatgeError)} ${chalk.whiteBright.bgRed.bold("ERROR")}`
+}
 
 
-function testEliminarInput() {
-	console.log(5 === 5 ? 'Tot correcte' : 'Error');
-	
+function testButtonsDadesPersonals() {
+	//console.log(5 === 5 ? 'Tot correcte' : 'Error');
+	const dadesPersonalForm = DomElements.dadesPersonalsForm;
+	let buttonsEsborrarInputs = document.querySelectorAll('button[name="eliminarInput"]');
+	const buttonAfegirInput = document.querySelector('button[name="afegirDada"]');
+
+	console.log(chalk.blue("Test fills inicials"));
+	let fillsInicialsForm = dadesPersonalForm.childElementCount;
+	console.log(fillsInicialsForm === 5 ? missatgeConsolaOk("Fills inicials correctes, 5") : missatgeConsolaError("Error fills inicials", fillsInicialsForm));
+
+	/**BUTTON AFEGIR INPUT */
+	console.log(chalk.blue("Test boto afegit input"));
+	buttonAfegirInput.click();
+	let fillsActuals = dadesPersonalForm.childElementCount;
+	console.log(fillsActuals === 6 ? missatgeConsolaOk("Aumentar els fills en 1, en total 6") : missatgeConsolaError("Error aumentar els fills en 1"));
+
+	/**BUTTON ELIMINAR INPUT */
+	console.log(chalk.blue("Test boto eliminar input"));
+	buttonsEsborrarInputs = document.querySelectorAll('button[name="eliminarInput"]');
+	buttonsEsborrarInputs[buttonsEsborrarInputs.length - 1].click();
+	fillsActuals = dadesPersonalForm.childElementCount;
+	console.log(fillsActuals === 5 ? missatgeConsolaOk('Fill esborrat correctament') : missatgeConsolaError("Error en esborrar fill"));
+
+	console.log(missatgeConsolaOk('Proba missatge OK'));
+	console.log(missatgeConsolaError('Proba missatge Error'));
+
 
 }
 
-testEliminarInput();
+function testButtonsDadesAcademiques() {
+	
+}
+
+
+
+
+testButtonsDadesPersonals();
