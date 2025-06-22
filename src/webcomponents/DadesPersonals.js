@@ -29,7 +29,7 @@ class DadesPersonals extends HTMLElement {
 
 	connectedCallback() {
 		let dades = {};
-		console.log('connectedCallback')
+		//console.log('connectedCallback')
 		this.addEventListener('enviar-dades-personals', (evento) => {
 
 			console.log('Objeto recibido:', evento.detail); // Muestra { mensaje: 'Hola desde el custom element' }
@@ -38,29 +38,28 @@ class DadesPersonals extends HTMLElement {
 			//TODO para control si dades es undefined, error console
 			if (typeof dades === 'object' && dades !== null) {
 				if (Object.keys(dades).length) {
-					console.log('fer render', Object.keys(dades).length);
+					//console.log('fer render', Object.keys(dades).length);
+					//TODO per obtenir les dades amb el for i guardar a const
 					let dadesHTML = ''
 					for (const [key, value] of Object.entries(dades)) {
 						console.log(`${key}: ${value}`);
 						dadesHTML += `<div name=div${key}><p name=${key}>${value}</p></div>`
 						}
-					console.log(dadesHTML);
+					//console.log(dadesHTML);
 					this.render(dadesHTML);
 				} else {
 					console.log('DadesPersonals.js/connectedCallback/addEventListener => dades es un object buit');
+					//TODO function per eliminar CustomElement si dades es buit i existeix element al DOM
 					const DadesPersonalsElement = document.querySelector('dades-personals');
 					let existeixDadesPersonalsHTML = !!DadesPersonalsElement;
-					console.log(existeixDadesPersonalsHTML)
+					//console.log(existeixDadesPersonalsHTML)
 					if (existeixDadesPersonalsHTML)	DadesPersonalsElement.remove()
 				}
 			} else {
 				console.log('DadesPersonals.js/connectedCallback/addEventListener => dades no es un object o es null')
-			}
-			
+			}			
 
-		});
-
-		
+		});	
 		
 	}
 

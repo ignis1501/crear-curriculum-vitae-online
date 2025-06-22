@@ -45,9 +45,9 @@ document.querySelector('#app').innerHTML = `
 		<div id="div-form-estudis" name="div-form-estudis">			
 			<form name="dades-estudis-form">
 				<div name="divEstudis" class="dades-estudis">
-					<input name="data-estudis" placeholder="Fecha estudios"/>
-					<input name="nom-estudis" placeholder="Titulo estudios"/>
-					<input name="centre-estudis" placeholder="Centro estudios"/>
+					<input type="text" name="data-estudis" placeholder="Fecha estudios"/>
+					<input type="text" name="nom-estudis" placeholder="Titulo estudios"/>
+					<input type="text" name="centre-estudis" placeholder="Centro estudios"/>
 				</div>
 				<button name="eliminarSeccio">Eliminar</button>			
 			</form>

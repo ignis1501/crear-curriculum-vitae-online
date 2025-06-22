@@ -169,6 +169,7 @@ const quitarProfesio = (event) => {
 
 const obtenirDadesFormularis = (form) => {
 	const formData = new FormData(form);
+	console.log("formPersonals", form);
 	const dades = {}
 	for (const [key, value] of formData.entries()) {
 		if ((!value) || (value === '')) {
@@ -177,26 +178,34 @@ const obtenirDadesFormularis = (form) => {
 		let valor = sanititzarValor(value);
 		dades[key] = valor
 	}
-	console.log('dadesPersonals', dades)
+	//console.log('dadesPersonals', dades)
 
 	return dades
 }
 
 const obtenirDadesFormularisCompostos = (form) => {
 	const dades = []
+	//const formDataForm = new FormData(form);
+	//console.log("formDataForm", formDataForm);
+	console.log("form", form);
 	form.forEach((f, i) => {
+		console.log("f", f);
+		console.log("i", i);
 		let dada = {}
 		const formData = new FormData(f);
+		console.log("formData", formData);
 		
 		for (const [key, value] of formData.entries()) {
 			if ((!value) || (value === '')) {
 				continue;
 			}
 			let valor = sanititzarValor(value);
+			console.log("valor", valor);
 			dada[key] = valor
 			console.log('dada dins for', dada)
 		}
 		dades.push(dada)
+		console.log('dades Compostes', dades);
 	})
 
 	return dades
@@ -225,11 +234,20 @@ const obtenirDades = () => {
 
 	const formDadesEstudis = document.querySelectorAll('div[name="div-form-estudis"] form');
 	dadesEstudis = obtenirDadesFormularisCompostos(formDadesEstudis);
+	console.log("dadesEstudis", dadesEstudis);
 
 	const formDadesProfesionals = document.querySelectorAll('div[name="div-form-profesio"] form');
 	dadesProfesionals = obtenirDadesFormularisCompostos(formDadesProfesionals);
 
-	const app = document.getElementById('app');
+	console.log("formDadesPersonals", formDadesPersonals);
+	console.log("formDadesEstudis", formDadesEstudis);
+	console.log("formDadesProfesionals", formDadesProfesionals);
+
+	//const app = document.getElementById('app');
+
+	console.log("dadesPersonals", dadesPersonals);
+	console.log("dadesEstudis", dadesEstudis);
+	console.log("dadesProfesionals", dadesProfesionals);
 
 	afegirCustomElement('dades-personals');
 
