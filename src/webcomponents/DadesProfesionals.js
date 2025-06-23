@@ -35,22 +35,21 @@ class DadesPersonals extends HTMLElement {
 		 */
 		this.addEventListener('enviar-dades-personals', (evento) => {
 
-			//console.log('Objeto recibido:', evento.detail);
+			console.log('Objeto recibido:', evento.detail);
 			dades = evento.detail.dades;
-			//console.log('dades', dades)
-			//TODO CONTROL DE DADES UNDEFINED
+			console.log('dades', dades)
 			if (typeof dades === 'object' && dades !== null) {//revisar si dades isObject i !null
 				if (Object.keys(dades).length) {					
 					const dadesHTML = crearDadesHtml(dades);
 					//console.log("dadesHTML, dins customElement", dadesHTML);
 					this.render(dadesHTML);
 				} else {
-					//console.log('DadesPersonals.js/connectedCallback/addEventListener => dades es un object buit');
+					console.log('DadesPersonals.js/connectedCallback/addEventListener => dades es un object buit');
 					//eliminar CustomElement si dades es buit i existeix element al DOM
 					eliminarCE();
 				}
 			} else {
-				//console.log('DadesPersonals.js/connectedCallback/addEventListener => dades no es un object o es null')
+				console.log('DadesPersonals.js/connectedCallback/addEventListener => dades no es un object o es null')
 			}			
 
 		});	
@@ -63,7 +62,7 @@ class DadesPersonals extends HTMLElement {
 		const crearDadesHtml = (dades) => {
 			let dadesHTML = ''
 			for (const [key, value] of Object.entries(dades)) {
-				//console.log(`${key}: ${value}`);
+				console.log(`${key}: ${value}`);
 				dadesHTML += `<div name=div${key}><p name=${key}>${value}</p></div>`
 			}
 

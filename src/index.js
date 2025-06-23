@@ -187,25 +187,25 @@ const obtenirDadesFormularisCompostos = (form) => {
 	const dades = []
 	//const formDataForm = new FormData(form);
 	//console.log("formDataForm", formDataForm);
-	console.log("form", form);
+	//console.log("form", form);
 	form.forEach((f, i) => {
-		console.log("f", f);
-		console.log("i", i);
+		//console.log("f", f);
+		//console.log("i", i);
 		let dada = {}
 		const formData = new FormData(f);
-		console.log("formData", formData);
+		//console.log("formData", formData);
 		
 		for (const [key, value] of formData.entries()) {
 			if ((!value) || (value === '')) {
 				continue;
 			}
 			let valor = sanititzarValor(value);
-			console.log("valor", valor);
+			//console.log("valor", valor);
 			dada[key] = valor
-			console.log('dada dins for', dada)
+			//console.log('dada dins for', dada)
 		}
 		dades.push(dada)
-		console.log('dades Compostes', dades);
+		//console.log('dades Compostes', dades);
 	})
 
 	return dades
@@ -250,8 +250,10 @@ const obtenirDades = () => {
 	console.log("dadesProfesionals", dadesProfesionals);
 
 	afegirCustomElement('dades-personals');
+	afegirCustomElement('dades-estudis');
 
 	enviarCustomEvent('dades-personals');
+	enviarCustomEvent('dades-estudis');
 	
 }
 
@@ -268,6 +270,8 @@ const afegirCustomElement = (nom) => {
 
 const enviarCustomEvent = (enviarANomEvent) => {
 	const elementEvent = document.querySelector(enviarANomEvent);
+	console.log("elementEvent", elementEvent);
+	console.log("enviarANomEvent", enviarANomEvent);
 
 	const detailEvent = {
 		'dades-personals': {
@@ -286,6 +290,8 @@ const enviarCustomEvent = (enviarANomEvent) => {
 			dades: dadesProfesionals
 		}
 	}
+
+	console.log("detailEvent[enviarANomEvent].nomEvent", detailEvent[enviarANomEvent].nomEvent);
 	
 	elementEvent.dispatchEvent(new CustomEvent(detailEvent[enviarANomEvent].nomEvent, {
 		detail: {
