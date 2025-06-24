@@ -45,7 +45,7 @@ class DadesPersonals extends HTMLElement {
 					//console.log("dadesHTML, dins customElement", dadesHTML);
 					this.render(dadesHTML);
 				} else {
-					//console.log('DadesPersonals.js/connectedCallback/addEventListener => dades es un object buit');
+					console.log('DadesPersonals.js/connectedCallback/addEventListener => dades es un object buit');
 					//eliminar CustomElement si dades es buit i existeix element al DOM
 					eliminarCE();
 				}

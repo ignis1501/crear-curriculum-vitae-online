@@ -16,7 +16,7 @@ class DadesEstudis extends HTMLElement {
 			dades = evento.detail.dades;
 			console.log('dades', dades)
 			if (typeof dades === 'object' && dades !== null) {//revisar si dades isObject i !null
-				if (Object.keys(dades).length) {					
+				if (Object.entries(Object.fromEntries(dades)).length !== 0) {					
 					const dadesHTML = crearDadesHtml(dades);
 					//console.log("dadesHTML, dins customElement", dadesHTML);
 					this.render(dadesHTML);
@@ -37,15 +37,22 @@ class DadesEstudis extends HTMLElement {
 		 * @returns dadesHTML
 		 */
 		const crearDadesHtml = (dades) => {
-			/* let dadesHTML = ''
+			let dadesHTML = ''
 			for (const [key, value] of Object.entries(dades)) {
-				console.log(`${key}: ${value}`);
-				dadesHTML += `<div name=div${key}><p name=${key}>${value}</p></div>`
+				dadesHTML += `<div name=estudis${key}>`;
+				console.log(key);
+				for (const [subKey, subValue] of Object.entries(value)) {
+					dadesHTML += `<div name=div${subKey}><p name=${subKey}>${subValue}</p></div>`
+				}
+				dadesHTML += `</div>`
+				/* console.log(`${key}: ${value}`);
+				dadesHTML += `<div name=div${key}><p name=${key}>${value}</p></div>` */
 			}
+			console.log('dades creades estudis HTML', dadesHTML);
 
-			return dadesHTML; */
+			return dadesHTML;
 
-			console.log('dades dins DadesEstudis CE', dades);
+			//console.log('dades dins DadesEstudis CE', dades);
 		}
 
 		/**
@@ -62,7 +69,7 @@ class DadesEstudis extends HTMLElement {
 
 	render(dadesHTML) {
 		this.innerHTML = `			
-			<h2>Dades personals</h2>
+			<h2>Datos académicos</h2>
 			<div>
 				${dadesHTML}
 			</div>		

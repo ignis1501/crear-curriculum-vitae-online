@@ -1,8 +1,8 @@
 import DomElements from './dom/domElements.js'
 
-let dadesPersonals = {}
+/* let dadesPersonals = {}
 let dadesEstudis = {}
-let dadesProfesionals = {}
+let dadesProfesionals = {} */
 
 console.log('index');
 
@@ -169,7 +169,7 @@ const quitarProfesio = (event) => {
 
 const obtenirDadesFormularis = (form) => {
 	const formData = new FormData(form);
-	console.log("formPersonals", form);
+	//console.log("formPersonals formData", formData);
 	const dades = {}
 	for (const [key, value] of formData.entries()) {
 		if ((!value) || (value === '')) {
@@ -184,31 +184,46 @@ const obtenirDadesFormularis = (form) => {
 }
 
 const obtenirDadesFormularisCompostos = (form) => {
-	const dades = []
-	//const formDataForm = new FormData(form);
-	//console.log("formDataForm", formDataForm);
-	//console.log("form", form);
-	form.forEach((f, i) => {
-		//console.log("f", f);
-		//console.log("i", i);
-		let dada = {}
-		const formData = new FormData(f);
-		//console.log("formData", formData);
-		
-		for (const [key, value] of formData.entries()) {
-			if ((!value) || (value === '')) {
-				continue;
+	const dades = [];
+	//console.log(dades.length, 'dades.length');
+	//console.log(dades, 'dades en entrar a compostos');
+	//console.log('form.length', form.length);
+	for (let i = 0; i < form.length; i++) {
+		const dada = {};
+		const formData = new FormData(form[i]);
+		//console.log(formData, 'FormData');
+		console.log('formDatalength', Array.from(formData.values()).length);
+		if (Object.entries(Object.fromEntries(formData)).length !== 0) {
+			for (const [key, value] of formData.entries()) {
+				
+				if ((!value) || (value === '')) {
+					console.log('value', value);
+					continue;
+				}
+				console.log('value', value);
+				let valor = sanititzarValor(value);
+				dada[key] = valor;
+				
+				//console.log(dada, 'dada');
 			}
-			let valor = sanititzarValor(value);
-			//console.log("valor", valor);
-			dada[key] = valor
-			//console.log('dada dins for', dada)
+			dades.push(dada);			
+		} else {
+			console.log('formData buit');
 		}
-		dades.push(dada)
-		//console.log('dades Compostes', dades);
-	})
+	}
+	//console.log('obtenirDadesCompostFin dades', dades);
 
 	return dades
+}
+
+const crearObjecteDades = (formDades) => {
+	const dades = [];
+	formDades.forEach((form) => {
+		const dada = obtenirDadesFormularis(form);
+		if (Object.keys(dada).length !== 0) dades.push(dada);
+	})
+
+	return dades;
 }
 
 const sanititzarValor = (valor) => {
@@ -229,31 +244,59 @@ const sanititzarValor = (valor) => {
 }
 
 const obtenirDades = () => {
+	let dadesPersonals = {};
+	let dadesEstudis = {};
+	let dadesProfesionals = {};
+	//console.log("dadesPersonals iniciObtenirDades", dadesPersonals);
+	//console.log("dadesEstudis iniciObtenirDades", dadesEstudis);
+	//console.log("dadesProfesionals iniciObtenirDades", dadesProfesionals);
 	const formDadesPersonals = document.getElementById('dades-personals-form');
+	//dadesPersonals = {};
 	dadesPersonals = obtenirDadesFormularis(formDadesPersonals);
 
 	const formDadesEstudis = document.querySelectorAll('div[name="div-form-estudis"] form');
-	dadesEstudis = obtenirDadesFormularisCompostos(formDadesEstudis);
-	console.log("dadesEstudis", dadesEstudis);
+	//console.log(formDadesEstudis, 'EstudisForm');
+	//dadesEstudis = {};
+	dadesEstudis = crearObjecteDades(formDadesEstudis);
+	console.log('dadesEstudis', dadesEstudis);
+	/* console.log('dadesEstudis length abans', dadesEstudis.length);
+	formDadesEstudis.forEach((form) => {
+		const dades = obtenirDadesFormularis(form);
+		console.log(dades);
+		console.log(typeof dades);
+		console.log(dades.length, 'dadeslength');
+		if (Object.keys(dades).length !== 0) dadesEstudis.push(dades);
+	}) */
+	//console.log('dadesEstudis length', dadesEstudis.length);
+	//console.log('dadesEstudis valuesObject', Object.values(dadesEstudis));
+	/* dadesEstudis = obtenirDadesFormularisCompostos(formDadesEstudis);
+	if (dadesEstudis[0].length === 0)	dadesEstudis.length = 0; */
+	//console.log("dadesEstudis", dadesEstudis);
 
 	const formDadesProfesionals = document.querySelectorAll('div[name="div-form-profesio"] form');
-	dadesProfesionals = obtenirDadesFormularisCompostos(formDadesProfesionals);
+	dadesProfesionals = crearObjecteDades(formDadesProfesionals);
+	//dadesProfesionals = {};
+	/* dadesProfesionals = obtenirDadesFormularisCompostos(formDadesProfesionals);
+	if (dadesProfesionals[0].length === 0)	dadesProfesionals.length = 0; */
 
-	console.log("formDadesPersonals", formDadesPersonals);
-	console.log("formDadesEstudis", formDadesEstudis);
-	console.log("formDadesProfesionals", formDadesProfesionals);
+	//console.log("formDadesPersonals", formDadesPersonals);
+	//console.log("formDadesEstudis", formDadesEstudis);
+	//console.log("formDadesProfesionals", formDadesProfesionals);
 
 	//const app = document.getElementById('app');
 
-	console.log("dadesPersonals", dadesPersonals);
+	/* console.log("dadesPersonals", dadesPersonals);
 	console.log("dadesEstudis", dadesEstudis);
 	console.log("dadesProfesionals", dadesProfesionals);
+	console.log("dadesProfesionals 0", dadesProfesionals[0].length); */
 
 	afegirCustomElement('dades-personals');
 	afegirCustomElement('dades-estudis');
+	afegirCustomElement('dades-profesionals');
 
-	enviarCustomEvent('dades-personals');
-	enviarCustomEvent('dades-estudis');
+	enviarCustomEvent('dades-personals', dadesPersonals);
+	enviarCustomEvent('dades-estudis', dadesEstudis);
+	enviarCustomEvent('dades-profesionals', dadesProfesionals);
 	
 }
 
@@ -268,30 +311,30 @@ const afegirCustomElement = (nom) => {
 	
 }
 
-const enviarCustomEvent = (enviarANomEvent) => {
+const enviarCustomEvent = (enviarANomEvent, dades) => {
 	const elementEvent = document.querySelector(enviarANomEvent);
-	console.log("elementEvent", elementEvent);
-	console.log("enviarANomEvent", enviarANomEvent);
+	//console.log("elementEvent", elementEvent);
+	//console.log("enviarANomEvent", enviarANomEvent);
 
 	const detailEvent = {
 		'dades-personals': {
 			nomEvent: `enviar-${enviarANomEvent}`,
 			missatge: 'Dades personals',
-			dades: dadesPersonals
+			dades: dades
 		},
 		'dades-estudis': {
 			nomEvent: `enviar-${enviarANomEvent}`,
 			missatge: 'Dades estudis',
-			dades: dadesEstudis
+			dades: dades
 		},
 		'dades-profesionals': {
 			nomEvent: `enviar-${enviarANomEvent}`,
 			missatge: 'Dades Profesionals',
-			dades: dadesProfesionals
+			dades: dades
 		}
 	}
 
-	console.log("detailEvent[enviarANomEvent].nomEvent", detailEvent[enviarANomEvent].nomEvent);
+	//console.log("detailEvent[enviarANomEvent].nomEvent", detailEvent[enviarANomEvent].nomEvent);
 	
 	elementEvent.dispatchEvent(new CustomEvent(detailEvent[enviarANomEvent].nomEvent, {
 		detail: {
