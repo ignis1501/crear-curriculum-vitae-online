@@ -1,4 +1,44 @@
-div[name='container'] {
+div[name="container"] {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+h1 {
+	width: 100%;
+	text-align: end;
+}
+
+div[name="dades-personals"] {
+	width: 25%;
+	height: 100%;
+}
+
+div[name="dades-profesionals"] {
+	width: 75%;
+}
+
+div[name="dades-estudis"] {
+	width: 75%;
+	text-align: end;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* div[name='container'] {
 	display: grid;
 	grid-template-areas: 
 	"none			titol				titol"
@@ -24,21 +64,15 @@ div[name='dades-profesionals'] {
 	grid-area: dadesProfesionals;
 	background: rgba(70, 182, 104, 0.411);
 
-	/* display: grid;
-	grid-template-areas: 
-	"dadesProfesio0"
-	"dadesProfesio1"; */
 }
 
 .dada-profesio {
 	display: flex;
-/* 	padding: 0.5rem;
- */    border-bottom: 2px solid white;
+	border-bottom: 2px solid white;
 	
 	div {
 		display: block;
-/* 		padding-inline-end: 0.5rem;
- */	}
+	}
 	div[name="divdetalls-profesional"] {
 		align-content: center;
 
@@ -49,67 +83,13 @@ div[name='dades-profesionals'] {
 	}
 }
 
-/* div[name="profesio0"] {
-	grid-area: dadesProfesio0;
-	display: grid;
-	grid-template-areas: 
-	"dataProfesional0		detalls0	detalls0"
-	"nomProfesional0		detalls0	detalls0"
-	"centreProfesional0		detalls0	detalls0";
-}
-
-div[name='divdata-profesional0'] {
-	grid-area: dataProfesiona0l;
-}
-div[name='divnom-profesional0'] {
-	grid-area: nomProfesional0;
-}
-div[name='divcentre-profesional0'] {
-	grid-area: centreProfesional0;
-}
-div[name='divdetalls-profesional0'] {
-	grid-area: detalls0;
-}
-div[name="profesio1"] {
-	grid-area: dadesProfesio1;
-	display: grid;
-	grid-template-areas: 
-	"dataProfesional1		detalls1	detalls1"
-	"nomProfesional1		detalls1	detalls1"
-	"centreProfesional1		detalls1	detalls1";
-}
-
-div[name='divdata-profesional1'] {
-	grid-area: dataProfesional1;
-}
-div[name='divnom-profesional1'] {
-	grid-area: nomProfesional1;
-}
-div[name='divcentre-profesional1'] {
-	grid-area: centreProfesional1;
-}
-div[name='divdetalls-profesional1'] {
-	grid-area: detalls1;
-} */
-
 div[name='dades-estudis'] {
 	grid-area: dadesEstudis;
 	background: rgba(150, 70, 182, 0.411);
 
-	/* display: grid;
-	grid-template-areas: 
-	"dataEstudis	titolEstudis	titolEstudis"
-	"centreEstudis	.				."; */
 }
 
-/* div[name='divdata-estudis'] {
-	grid-area: dataEstudis;
-}
-div[name='divtitol-estudis'] {
-	grid-area: titolEstudis;
-}
-div[name='divcentre-estudis'] {
-	grid-area: centreEstudis;
-} */
 
 
+
+ */
