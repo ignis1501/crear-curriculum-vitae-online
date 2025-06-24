@@ -56,14 +56,14 @@ const afegirDadaPersonal = (event) => {
 	divsDades[divsDades.length-1].insertAdjacentHTML("afterEnd", htmlDadaPersonal);
 }
 
-const quitarDadaPersonal = (event) => {
+/* const quitarDadaPersonal = (event) => {
 	event.preventDefault()
 	let divsDades = document.querySelectorAll('div[class="dades-personals"]');
 	(divsDades.length > 3)
 		?	divsDades[divsDades.length-1].remove()
 		:	alert('No se pueden eliminar los elementos predeterminados')
 	
-}
+} */
 
 const afegirEstudis = (event) => {
 	event.preventDefault()
@@ -87,13 +87,13 @@ const afegirEstudis = (event) => {
 
 }
 
-const quitarEstudis = (event) => {
+/* const quitarEstudis = (event) => {
 	event.preventDefault()
 	let divsFormEstudis = document.querySelectorAll('div[name="div-form-estudis"] form');
 	(divsFormEstudis.length > 1)
 		?	divsFormEstudis[divsFormEstudis.length-1].remove()
 		:	alert('No se puede eliminar el último elemento')
-}
+} */
 
 /* const crearLista = (event) => {
 	event.preventDefault()
@@ -161,11 +161,11 @@ const afegirProfesio = (event) => {
 		:	divProfesio.insertAdjacentHTML("afterbegin", nouDivProfesio)
 }
 
-const quitarProfesio = (event) => {
+/* const quitarProfesio = (event) => {
 	event.preventDefault();
 	event.target.parentNode.parentNode.remove()
 
-}
+} */
 
 const obtenirDadesFormularis = (form) => {
 	const formData = new FormData(form);
@@ -178,12 +178,12 @@ const obtenirDadesFormularis = (form) => {
 		let valor = sanititzarValor(value);
 		dades[key] = valor
 	}
-	//console.log('dadesPersonals', dades)
+	console.log('dadesPersonals', dades)
 
 	return dades
 }
 
-const obtenirDadesFormularisCompostos = (form) => {
+/* const obtenirDadesFormularisCompostos = (form) => {
 	const dades = [];
 	//console.log(dades.length, 'dades.length');
 	//console.log(dades, 'dades en entrar a compostos');
@@ -214,7 +214,7 @@ const obtenirDadesFormularisCompostos = (form) => {
 	//console.log('obtenirDadesCompostFin dades', dades);
 
 	return dades
-}
+} */
 
 const crearObjecteDades = (formDades) => {
 	const dades = [];
@@ -247,56 +247,38 @@ const obtenirDades = () => {
 	let dadesPersonals = {};
 	let dadesEstudis = {};
 	let dadesProfesionals = {};
-	//console.log("dadesPersonals iniciObtenirDades", dadesPersonals);
-	//console.log("dadesEstudis iniciObtenirDades", dadesEstudis);
-	//console.log("dadesProfesionals iniciObtenirDades", dadesProfesionals);
+
 	const formDadesPersonals = document.getElementById('dades-personals-form');
-	//dadesPersonals = {};
 	dadesPersonals = obtenirDadesFormularis(formDadesPersonals);
+	console.log('dadesPersonals length', Object.keys(dadesPersonals).length);
+	if (Object.keys(dadesPersonals).length !== 0) {
+		afegirCustomElement('dades-personals');
+		enviarCustomEvent('dades-personals', dadesPersonals);
+	}
 
 	const formDadesEstudis = document.querySelectorAll('div[name="div-form-estudis"] form');
-	//console.log(formDadesEstudis, 'EstudisForm');
-	//dadesEstudis = {};
 	dadesEstudis = crearObjecteDades(formDadesEstudis);
-	console.log('dadesEstudis', dadesEstudis);
-	/* console.log('dadesEstudis length abans', dadesEstudis.length);
-	formDadesEstudis.forEach((form) => {
-		const dades = obtenirDadesFormularis(form);
-		console.log(dades);
-		console.log(typeof dades);
-		console.log(dades.length, 'dadeslength');
-		if (Object.keys(dades).length !== 0) dadesEstudis.push(dades);
-	}) */
-	//console.log('dadesEstudis length', dadesEstudis.length);
-	//console.log('dadesEstudis valuesObject', Object.values(dadesEstudis));
-	/* dadesEstudis = obtenirDadesFormularisCompostos(formDadesEstudis);
-	if (dadesEstudis[0].length === 0)	dadesEstudis.length = 0; */
-	//console.log("dadesEstudis", dadesEstudis);
+	console.log('dadesEstudis length', dadesEstudis.length);
+	if (dadesEstudis.length !== 0) {
+		afegirCustomElement('dades-estudis');
+		enviarCustomEvent('dades-estudis', dadesEstudis);
+	}	
 
 	const formDadesProfesionals = document.querySelectorAll('div[name="div-form-profesio"] form');
 	dadesProfesionals = crearObjecteDades(formDadesProfesionals);
-	//dadesProfesionals = {};
-	/* dadesProfesionals = obtenirDadesFormularisCompostos(formDadesProfesionals);
-	if (dadesProfesionals[0].length === 0)	dadesProfesionals.length = 0; */
+	console.log('dadesProfesionals length', dadesProfesionals.length);
+	if (dadesProfesionals.length !== 0) {
+		afegirCustomElement('dades-profesionals');
+		enviarCustomEvent('dades-profesionals', dadesProfesionals);
+	}
 
-	//console.log("formDadesPersonals", formDadesPersonals);
-	//console.log("formDadesEstudis", formDadesEstudis);
-	//console.log("formDadesProfesionals", formDadesProfesionals);
-
-	//const app = document.getElementById('app');
-
-	/* console.log("dadesPersonals", dadesPersonals);
-	console.log("dadesEstudis", dadesEstudis);
-	console.log("dadesProfesionals", dadesProfesionals);
-	console.log("dadesProfesionals 0", dadesProfesionals[0].length); */
-
-	afegirCustomElement('dades-personals');
+	/* afegirCustomElement('dades-personals');
 	afegirCustomElement('dades-estudis');
 	afegirCustomElement('dades-profesionals');
 
 	enviarCustomEvent('dades-personals', dadesPersonals);
 	enviarCustomEvent('dades-estudis', dadesEstudis);
-	enviarCustomEvent('dades-profesionals', dadesProfesionals);
+	enviarCustomEvent('dades-profesionals', dadesProfesionals); */
 	
 }
 

@@ -1,0 +1,104 @@
+div[name='container'] {
+	display: grid;
+	grid-template-areas: 
+	"none			titol				titol"
+	"dadesPersonals	dadesProfesionals	dadesProfesionals"
+	"dadesPersonals	dadesEstudis		dadesEstudis";
+
+}
+
+h1[name='titol'] {
+	grid-area: titol;
+	background: rgba(70, 70, 182, 0.411);
+}
+
+div[name='dades-personals'] {
+	grid-area: dadesPersonals;
+	background: rgba(70, 70, 182, 0.411);
+}
+
+div[name='dades-profesionals'] {
+	grid-area: dadesProfesionals;
+	background: rgba(70, 182, 104, 0.411);
+
+	/* display: grid;
+	grid-template-areas: 
+	"dadesProfesio0"
+	"dadesProfesio1"; */
+}
+
+.dada-profesio {
+	display: grid;
+	
+	div[name="divdata-profesional"], div[name="divnom-profesional"], div[name="divcentre-profesional"] {
+		justify-content: left;
+	}
+	div[name="divdetalls-profesional"] {
+		justify-content: right;
+	}
+}
+
+/* div[name="profesio0"] {
+	grid-area: dadesProfesio0;
+	display: grid;
+	grid-template-areas: 
+	"dataProfesional0		detalls0	detalls0"
+	"nomProfesional0		detalls0	detalls0"
+	"centreProfesional0		detalls0	detalls0";
+}
+
+div[name='divdata-profesional0'] {
+	grid-area: dataProfesiona0l;
+}
+div[name='divnom-profesional0'] {
+	grid-area: nomProfesional0;
+}
+div[name='divcentre-profesional0'] {
+	grid-area: centreProfesional0;
+}
+div[name='divdetalls-profesional0'] {
+	grid-area: detalls0;
+}
+div[name="profesio1"] {
+	grid-area: dadesProfesio1;
+	display: grid;
+	grid-template-areas: 
+	"dataProfesional1		detalls1	detalls1"
+	"nomProfesional1		detalls1	detalls1"
+	"centreProfesional1		detalls1	detalls1";
+}
+
+div[name='divdata-profesional1'] {
+	grid-area: dataProfesional1;
+}
+div[name='divnom-profesional1'] {
+	grid-area: nomProfesional1;
+}
+div[name='divcentre-profesional1'] {
+	grid-area: centreProfesional1;
+}
+div[name='divdetalls-profesional1'] {
+	grid-area: detalls1;
+} */
+
+div[name='dades-estudis'] {
+	grid-area: dadesEstudis;
+	background: rgba(150, 70, 182, 0.411);
+
+	display: grid;
+	grid-template-areas: 
+	"dataEstudis	titolEstudis	titolEstudis"
+	"centreEstudis	.				.";
+}
+
+div[name='divdata-estudis'] {
+	grid-area: dataEstudis;
+}
+div[name='divtitol-estudis'] {
+	grid-area: titolEstudis;
+}
+div[name='divcentre-estudis'] {
+	grid-area: centreEstudis;
+}
+
+
