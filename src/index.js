@@ -36,6 +36,16 @@ DomElements.mostrarOcultarFormsButton.addEventListener('click', () => {
 	mostrarOcultarElement(DomElements.divFormulariDades);
 })
 
+DomElements.textAreas.forEach((textArea) => {
+	console.log("textArea", textArea);
+	
+	textArea.addEventListener('keyup', () => {
+		textArea.style.height = 'auto';
+		textArea.style.height = (textArea.scrollHeight) + 'px';
+	})
+	//textArea.style.height = (textArea.scrollHeight) + 'px';
+})
+
 /* afegirProfesioButton.addEventListener('click', (event) => {
 	afegirProfesio(event);
 }) */
@@ -73,7 +83,7 @@ const afegirEstudis = (event) => {
 	let estudis = `
 	<form name="dades-estudis-form">
 		<div name="divEstudis" class="dades-estudis">
-			<input name="data-estudis" placeholder="Fecha estudios"/>
+			<input name="data-estudis" placeholder="Fecha inicio - Fecha fin"/>
 			<input name="nom-estudis" placeholder="Titulo estudios"/>
 			<input name="centre-estudis" placeholder="Centro estudios"/>
 		</div>
@@ -148,10 +158,10 @@ const afegirProfesio = (event) => {
 	const divFormProfesio = document.querySelectorAll('div[name="div-form-profesio"] form');
 	const nouDivProfesio = `	
 	<form name="dades-estudis-form">
-		<input type="text" name="data-profesional" placeholder="Fechas"/>
+		<input type="text" name="data-profesional" placeholder="Fecha inicio - Fecha fin"/>
 		<input type="text" name="nom-profesional" placeholder="Puesto"/>
 		<input type="text" name="centre-profesional" placeholder="Empresa"/>
-		<textarea name="detalls-profesional" placeholder="Detalles"></textarea>
+		<textarea name="detalls-profesional" placeholder="En esta sección puedes añadir tantos detalles cómo creas convenientes sobre tus funciones, cometidos o las habilidades que has tenido que usar en este puesto de trabajo"></textarea>
 		<button name="eliminarSeccio">Eliminar</button>		
 	<form>
 	`;
@@ -172,10 +182,15 @@ const obtenirDadesFormularis = (form) => {
 	//console.log("formPersonals formData", formData);
 	const dades = {}
 	for (const [key, value] of formData.entries()) {
+		console.log('key', key);
 		if ((!value) || (value === '')) {
 			continue;
 		}
 		let valor = sanititzarValor(value);
+		if (key === 'habilitats-profesionals') {
+			valor = valor.split('<br>');
+			console.log('valor split', valor);
+		}
 		dades[key] = valor
 	}
 	console.log('dadesPersonals', dades)
@@ -251,6 +266,8 @@ const obtenirDades = () => {
 	let dadesPersonals = {};
 	let dadesEstudis = {};
 	let dadesProfesionals = {};
+	let resumProfesional = {};
+	let habilitats = {};
 
 	const formDadesPersonals = document.getElementById('dades-personals-form');
 	dadesPersonals = obtenirDadesFormularis(formDadesPersonals);
@@ -276,10 +293,22 @@ const obtenirDades = () => {
 		enviarCustomEvent('dades-profesionals', dadesProfesionals);
 	} */
 
+	const formResumProfesional = document.getElementById('resum-profesional');
+	resumProfesional = obtenirDadesFormularis(formResumProfesional);
+	console.log('resumProfesional', resumProfesional);
+
+	const formHabilitats = document.getElementById('habilitats-profesionals');
+	habilitats = obtenirDadesFormularis(formHabilitats);
+	console.log('habilitats', habilitats);
+
+	
+
 	const dades = { 
 		dadesPersonals: dadesPersonals,
 		dadesEstudis: dadesEstudis,
-		dadesProfesionals:dadesProfesionals
+		dadesProfesionals:dadesProfesionals,
+		resumProfesional: resumProfesional,
+		habilitats: habilitats
 	};
 
 	afegirCustomElement('curriculum-vitae');
