@@ -1,104 +1,200 @@
-div[name='container'] {
+curriculum-vitae {
 	display: grid;
-	grid-template-areas: 
-	"none			titol				titol"
-	"dadesPersonals	dadesProfesionals	dadesProfesionals"
-	"dadesPersonals	dadesEstudis		dadesEstudis";
+	grid-template-columns: 1fr 1fr 1fr;
+	/* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
+	gap: 5px 5px;
 
+	font-family: Cambria, Garamond, Georgia, Times, 'Times New Roman', serif;
+
+	overflow: auto;
+	width: 100%;
+
+	>div {
+		padding: 0.5rem;
+	}
+
+	p {
+		font-size: 1rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
 }
 
-h1[name='titol'] {
-	grid-area: titol;
-	background: rgba(70, 70, 182, 0.411);
+
+
+div[name="dades-resum-profesional"] {
+	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row-start: 2;
+	grid-row-end: 2;
+
+	background-color: rgba(64, 161, 206, 0.719);
 }
 
-div[name='dades-personals'] {
-	grid-area: dadesPersonals;
-	background: rgba(70, 70, 182, 0.411);
-}
+div[name="divTitol"]{
+	grid-column-start: 1;
+	grid-column-end: span 4;
 
-div[name='dades-profesionals'] {
-	grid-area: dadesProfesionals;
-	background: rgba(70, 182, 104, 0.411);
-
-	/* display: grid;
-	grid-template-areas: 
-	"dadesProfesio0"
-	"dadesProfesio1"; */
-}
-
-.dada-profesio {
 	display: grid;
+	justify-content: end;
+
+	border-top: 2px double rgb(23, 11, 128);
+	border-bottom: 2px double rgb(23, 11, 128);
+	padding: 20px 0 20px 0;
+
+	background-color: rgb(74, 167, 211);
+	border-radius: 16px;
+
+	h1 {
+		
+		color:rgba(0, 0, 0, 0.74);
+		font-weight: 900;
+		text-decoration: underline;
+
+		text-transform: uppercase;
+		font-size: 2rem;
+		
+		
+
+	}
+}
+
+/* div[name="dades-personals"] {
+	display: grid;
+	grid-column: 1 / 4;
+	grid-row: 2; */
+	div[name="dades-personals"] {
+		
+		grid-column-start: 1;
+		grid-column-end: 1;
+		grid-row-start: 3;
+		grid-row-end: 3;
+
+		background-color: rgba(116, 200, 240, 0.719);
+		border-radius: 16px;
+
+
+		>div {
+			text-align: center;
+		}
+	}
 	
-	div[name="divdata-profesional"], div[name="divnom-profesional"], div[name="divcentre-profesional"] {
-		justify-content: left;
+
+	
+/*}*/
+
+	
+/*}*/
+
+div[name="dades-aptituds"] {
+	grid-column-start: 1;
+	grid-column-end: 1;
+	grid-row-start: 4;
+	grid-row-end: 6;
+
+	background-color: rgba(116, 200, 240, 0.719);
+	border-radius: 16px;
+}
+
+/* div[name="dades-profesionals"] {
+	display: grid;
+	grid-column: 2 / 4;
+	grid-row: 2; */
+	div[name="dades-profesionals"] {
+		grid-column-start: 2;
+		grid-column-end: 4;
+		grid-row-start: 3;
+		grid-row-end: 4;
+
+		background-color: rgba(137, 43, 226, 0.267);
+
+		>div {
+			border-bottom: 2px solid rgb(32, 31, 31);
+		}
 	}
-	div[name="divdetalls-profesional"] {
-		justify-content: right;
+	
+
+	.dada-profesio {
+		display: grid;/*treure'l dona un efecte interesant*/
+		grid-template-columns: 1fr 2fr;
+
+		border-bottom: 2px solid black;
+
+		div[name="divnom-profesional"] {
+			background: rgba(85, 76, 76, 0.3);
+			border-radius: 16px;
+			box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+			backdrop-filter: blur(5px);
+			border: 1px solid rgba(255, 253, 253, 0.700);
+
+			margin: 0.3rem;
+			>p {
+			font-weight: 900;
+			text-align: center;
+			}
+		}
+
+		din[name="divdetalls-profesionals"] {
+			grid-row-start: 1;
+		}
 	}
-}
+/*}*/
 
-/* div[name="profesio0"] {
-	grid-area: dadesProfesio0;
+/* div[name="dades-estudis"] {
 	display: grid;
-	grid-template-areas: 
-	"dataProfesional0		detalls0	detalls0"
-	"nomProfesional0		detalls0	detalls0"
-	"centreProfesional0		detalls0	detalls0";
-}
+	grid-column: 1 / 3;
+	grid-row: 4 / 6; */
+	div[name="dades-estudis"] {
+		grid-column-start: 2;
+		grid-column-end: 5;
+		grid-row-start: 5;
+		grid-row-end: 6;
 
-div[name='divdata-profesional0'] {
-	grid-area: dataProfesiona0l;
-}
-div[name='divnom-profesional0'] {
-	grid-area: nomProfesional0;
-}
-div[name='divcentre-profesional0'] {
-	grid-area: centreProfesional0;
-}
-div[name='divdetalls-profesional0'] {
-	grid-area: detalls0;
-}
-div[name="profesio1"] {
-	grid-area: dadesProfesio1;
-	display: grid;
-	grid-template-areas: 
-	"dataProfesional1		detalls1	detalls1"
-	"nomProfesional1		detalls1	detalls1"
-	"centreProfesional1		detalls1	detalls1";
-}
+		background-color: rgba(128, 255, 0, 0.226);
 
-div[name='divdata-profesional1'] {
-	grid-area: dataProfesional1;
-}
-div[name='divnom-profesional1'] {
-	grid-area: nomProfesional1;
-}
-div[name='divcentre-profesional1'] {
-	grid-area: centreProfesional1;
-}
-div[name='divdetalls-profesional1'] {
-	grid-area: detalls1;
-} */
+		>div {
+			border-bottom: 2px solid rgb(51, 49, 49);
+		}
+	}
+	
+	div[name="dada-estudis"] {
+		>div {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
 
-div[name='dades-estudis'] {
-	grid-area: dadesEstudis;
-	background: rgba(150, 70, 182, 0.411);
+			div[name="divdata-estudis"] {
+				grid-column-start: 1;
+				grid-column-end: 2;
+			}
 
-	display: grid;
-	grid-template-areas: 
-	"dataEstudis	titolEstudis	titolEstudis"
-	"centreEstudis	.				.";
-}
+			div[name="divnom-estudis"] {
+				grid-column-start: 2;
+				grid-column-end: 3;
 
-div[name='divdata-estudis'] {
-	grid-area: dataEstudis;
-}
-div[name='divtitol-estudis'] {
-	grid-area: titolEstudis;
-}
-div[name='divcentre-estudis'] {
-	grid-area: centreEstudis;
-}
+				background: rgba(85, 76, 76, 0.3);
+				border-radius: 16px;
+				box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+				backdrop-filter: blur(5px);
+				border: 1px solid rgba(255, 253, 253, 0.700);
 
+				margin: 0.3rem;
+				>p {
+					font-weight: 900;
+					text-align: center;
+				}
+			}
 
+			div[name="divcentre-estudis"] {
+				grid-column-start: 1;
+				grid-column-end: 2;
+			}
+		}
+		
+	}
+/*}*/
+
+h2 {
+	text-transform: uppercase;
+}

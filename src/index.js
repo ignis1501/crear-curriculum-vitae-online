@@ -217,9 +217,11 @@ const obtenirDadesFormularis = (form) => {
 } */
 
 const crearObjecteDades = (formDades) => {
+	console.log("crearObjecteDades", formDades);
 	const dades = [];
 	formDades.forEach((form) => {
 		const dada = obtenirDadesFormularis(form);
+		console.log("crearObjecteDades form", form);
 		if (Object.keys(dada).length !== 0) dades.push(dada);
 	})
 
@@ -235,9 +237,11 @@ const sanititzarValor = (valor) => {
 			.replace(/>/g, "&gt;")
 			.replace(/"/g, "&quot;")
 			.replace(/'/g, "&#039;")
+			
 	
 	//eliminar etiquetes HTML
 	valor = valor.replace(/<[^>]*>?/gm, '');
+	valor = valor.replace(/\n/g, "<br>")
 
 	return valor;
 				
@@ -250,27 +254,36 @@ const obtenirDades = () => {
 
 	const formDadesPersonals = document.getElementById('dades-personals-form');
 	dadesPersonals = obtenirDadesFormularis(formDadesPersonals);
-	console.log('dadesPersonals length', Object.keys(dadesPersonals).length);
+	/* console.log('dadesPersonals length', Object.keys(dadesPersonals).length);
 	if (Object.keys(dadesPersonals).length !== 0) {
 		afegirCustomElement('dades-personals');
 		enviarCustomEvent('dades-personals', dadesPersonals);
-	}
+	} */
 
 	const formDadesEstudis = document.querySelectorAll('div[name="div-form-estudis"] form');
 	dadesEstudis = crearObjecteDades(formDadesEstudis);
-	console.log('dadesEstudis length', dadesEstudis.length);
+	/* console.log('dadesEstudis length', dadesEstudis.length);
 	if (dadesEstudis.length !== 0) {
 		afegirCustomElement('dades-estudis');
 		enviarCustomEvent('dades-estudis', dadesEstudis);
-	}	
+	} */	
 
 	const formDadesProfesionals = document.querySelectorAll('div[name="div-form-profesio"] form');
 	dadesProfesionals = crearObjecteDades(formDadesProfesionals);
-	console.log('dadesProfesionals length', dadesProfesionals.length);
+	/* console.log('dadesProfesionals length', dadesProfesionals.length);
 	if (dadesProfesionals.length !== 0) {
 		afegirCustomElement('dades-profesionals');
 		enviarCustomEvent('dades-profesionals', dadesProfesionals);
-	}
+	} */
+
+	const dades = { 
+		dadesPersonals: dadesPersonals,
+		dadesEstudis: dadesEstudis,
+		dadesProfesionals:dadesProfesionals
+	};
+
+	afegirCustomElement('curriculum-vitae');
+	enviarCustomEvent('curriculum-vitae', dades);
 
 	/* afegirCustomElement('dades-personals');
 	afegirCustomElement('dades-estudis');
@@ -286,7 +299,7 @@ const afegirCustomElement = (nom) => {
 	//verificat si ja existex l'element al DOM (!!document) retorna true/false si existeix
 	if (!(!!document.querySelector(nom))) {
 		const customElement = document.createElement(nom);
-		const app = document.getElementById('app');
+		const app = document.getElementById('container');
 	
 		app.appendChild(customElement);
 	}
@@ -312,6 +325,11 @@ const enviarCustomEvent = (enviarANomEvent, dades) => {
 		'dades-profesionals': {
 			nomEvent: `enviar-${enviarANomEvent}`,
 			missatge: 'Dades Profesionals',
+			dades: dades
+		},
+		'curriculum-vitae': {
+			nomEvent: `enviar-${enviarANomEvent}`,
+			missatge: 'Dades Curriculum',
 			dades: dades
 		}
 	}

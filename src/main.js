@@ -83,65 +83,8 @@ document.querySelector('#app').innerHTML = `
 	</div>
 
 	<hr><hr>
-	<div name="container">
-		<h1 name="titol">Irene Martinez Vinaixa</h1>
-		<div name="dades-personals">
-			<div name="nom" class="dades-personals"><p>Irene Martinez Vinaixa</p></div>
-			<div name="telefon" class="dades-personals"><p>666666666</p></div>
-			<div name="email" class="dades-personals"><p>ivinaixa@gmail.com</p></div>
-			<div name="linkedin" class="dades-personals"><p>@ivinaixa</p></div>
-			<div name="linkedin" class="dades-personals"><p>@ivinaixa</p></div>
-		</div>		
-
-		<div name="dades-profesionals" class="dades-profesionals">
-			<div name="profesio0" class="dada-profesio">
-				<div name="divdata-profesional">
-					<p name="data-profesional">Agosto 2020 - Actualmente</p>
-				</div>
-				<div name="divnom-profesional">
-					<p name="nom-profesional">Gestor Backoffice</p>
-				</div>
-				<div name="divcentre-profesional">
-					<p name="centre-profesional">Goldenline SL</p>
-				</div>
-				<div name="divdetalls-profesional">
-					<p name="detalls-profesional">- Revisión de documentación.
-					- Revisión de los expedientes de los clientes.
-					- Atención a clientes de B2B y B2C.</p>
-				</div>
-			</div>	
-			<div name="profesio1" class="dada-profesio">
-				<div name="divdata-profesional">
-					<p name="data-profesional">Agosto 2020 - Actualmente</p>
-				</div>
-				<div name="divnom-profesional">
-					<p name="nom-profesional">Gestor Backoffice</p>
-				</div>
-				<div name="divcentre-profesional">
-					<p name="centre-profesional">Goldenline SL</p>
-				</div>
-				<div name="divdetalls-profesional">
-					<p name="detalls-profesional">- Revisión de documentación.
-					- Revisión de los expedientes de los clientes.
-					- Atención a clientes de B2B y B2C.</p>
-				</div>
-			</div>	
-		</div>
-
-		<div name="dades-estudis" class="dades-estudis>
-			<div name="estudis0">
-				<div name="divdata-estudis">
-					<p name="data-estudis">Diciembre 2025</p>
-				</div>
-				<div name="divtitol-estudis">
-					<p name="titol-estudis">Auxiliar administrativo</p>
-				</div>
-				<div name="divcentre-estudis">
-					<p name="centre-estudis">IOC</p>
-				</div>
-			</div>	
-		</div>
-	</div>
+	<div id="container" name="container"></div>
+	
 	
 `
 

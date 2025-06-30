@@ -69,10 +69,13 @@ class DadesProfesionals extends HTMLElement {
 
 	render(dadesHTML) {
 		this.innerHTML = `			
-			<h2>Datos profesionales</h2>
-			<div>
+			
+		<div name="dades-profesionals"> 
+			<h2>Experciencia Laboral</h2>
+			<div name="dada-profesio">
 				${dadesHTML}
-			</div>		
+			</div>
+		</div>
 		`
 	}
 }

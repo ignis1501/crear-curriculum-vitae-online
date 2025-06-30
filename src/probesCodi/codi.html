@@ -8,16 +8,31 @@
 </head>
 <body>
 	<div name="container">
-		<h1 name="titol">Irene Martinez Vinaixa</h1>
+		<div name="divTitol">
+			<h1 name="titol">Lorem Ipsum is simply</h1>
+		</div>
+		<div name="dades-resum-profesional">
+			<h2>Resumen Profesional</h2>
+			<p>
+				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+			</p>
+		</div>
 		<div name="dades-personals">
-			<div name="nom" class="dades-personals"><p>Irene Martinez Vinaixa</p></div>
+			<h2>Contacto</h2>
+			<div name="nom" class="dades-personals"><p>Lorem Ipsum is simply</p></div>
 			<div name="telefon" class="dades-personals"><p>666666666</p></div>
-			<div name="email" class="dades-personals"><p>ivinaixa@gmail.com</p></div>
-			<div name="linkedin" class="dades-personals"><p>@ivinaixa</p></div>
-			<div name="linkedin" class="dades-personals"><p>@ivinaixa</p></div>
-		</div>		
+			<div name="email" class="dades-personals"><p>Lorem Ipsum</p></div>
+			<div name="linkedin" class="dades-personals"><p>@Lorem Ipsum</p></div>
+			<div name="linkedin" class="dades-personals"><p>@Lorem Ipsum</p></div>
+		</div>
+		
+		<div name="dades-aptituds">
+			<h2>Habilidades</h2>
+			<p>Lorem</p><p>Ipsum</p><p>is simply dummy </p><p>ext of the printing</p><p>and typesetting industry</p>
+		</div>
 
 		<div name="dades-profesionals" class="dades-profesionals">
+			<h2>Experiencia laboral</h2>
 			<div name="profesio0" class="dada-profesio">
 				<div>
 					<div name="divdata-profesional">
@@ -107,6 +122,7 @@
 		</div>
 
 		<div name="dades-estudis">
+			<h2>Formación Académica</h2>
 			<div name="dada-estudis" class="dades-estudis">
 				<div name="estudis0">
 					<div name="divdata-estudis">
@@ -139,7 +155,7 @@
 						<p name="data-estudis">Diciembre 2025</p>
 					</div>
 					<div name="divtitol-estudis">
-						<p name="titol-estudis">Auxiliar administrativo</p>
+						<p name="titol-estudis">Auxiliar administrativo: Curso de auxiliar administrativo, centrado en las funciones de gestión documental y contabilidad.</p>
 					</div>
 					<div name="divcentre-estudis">
 						<p name="centre-estudis">IOC</p>
@@ -147,13 +163,60 @@
 				</div>	
 			</div>
 		</div>
-	
+	</div>
+	<button onclick="generarPDF()">Descargar PDF</button>
+	<button onclick="ocultarResum()">Proba GRID none</button>
 
 	<script>
 		//Conservar salts de línea en obtenir value textarea
 		/* var textarea = document.getElementById("codigo").value;
 		var textarea_line = textarea.replace(new RegExp("\\n", "g"), "<br>");
 		document.getElementById("show_textarea").innerHTML = textarea_line; */
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+	<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+	<script>
+		//  1. Incluir las librerías
+
+		//  2. Capturar el contenido
+		function generarPDF() {
+			const element = document.querySelector('div[name="container"]'); // Reemplaza con el ID de tu elemento
+			html2canvas(element).then(canvas => {
+				const imgData = canvas.toDataURL('image/png', 1.0);
+
+				//  3. Generar el PDF
+				const pdf = new jspdf.jsPDF();
+				const imgWidth = 210; // Ancho de la página A4 en mm
+				const pageHeight = 297; // Alto de la página A4 en mm
+				const imgHeight = canvas.height * imgWidth / canvas.width;
+				let heightLeft = imgHeight;
+				let position = 0;
+
+				pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+				heightLeft -= pageHeight;
+
+				while (heightLeft >= 0) {
+					position = heightLeft - imgHeight;
+					pdf.addPage();
+					pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+					heightLeft -= pageHeight;
+				}
+
+				//  4. Descargar el PDF
+				pdf.save('cv-exportado.pdf');
+			});
+		}
+
+		//  Llamar a la función al hacer clic en un botón
+		//<button onclick="generarPDF()">Descargar PDF</button>
+	</script>
+	<script>
+		function ocultarResum() {
+			let element = document.querySelector('div[name="dades-resum-profesional"]');
+			(element.style.display === 'none')
+			?	element.style.display = ''
+			:	element.style.display = 'none'
+		}
 	</script>
 </body>
 </html>

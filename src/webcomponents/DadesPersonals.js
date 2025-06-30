@@ -1,34 +1,11 @@
 class DadesPersonals extends HTMLElement {
-	/* static get observedAttributes() {
-		return [dadesPersonals];
-	} */
-
 	constructor() {
 		super();
-		//this.dades = null;
 	}
-
-	/* attributeChangedCallback(attrName, oldValue, newValue) {
-		console.log('attrName', attrName);
-		if (attrName === dadesPersonals) {
-		//this.shadowRoot.getElementById('valor').textContent = newValue;
-		} else if (attrName === 'otro-atributo') {
-		// Realizar acciones con el atributo 'otro-atributo'
-		console.log(`Atributo otro-atributo cambió a: ${newValue}`);
-		}
-	} */
-
-	/* handleEvent(event) {
-		console.log('entra event DadesPersonals')
-    if (event.type === "enviar-dades-personals") {
-      this.dades = event.detail;
-	  console.log(event.detail);
-      this.render();
-    }
-  } */
 
 	connectedCallback() {
 		let dades = {};
+		let nom = '';
 		/**
 		 * Event listener que escolta el customEvent 'enviar-dades-personals' i monta el DOM amb les dades 
 		 * @param evento => dades enviades pel customEvent a index.js
@@ -64,10 +41,13 @@ class DadesPersonals extends HTMLElement {
 			let dadesHTML = ''
 			for (const [key, value] of Object.entries(dades)) {
 				//console.log(`${key}: ${value}`);
-				dadesHTML += `<div name=div${key}><p name=${key}>${value}</p></div>`
+				(key === "nom")
+					?	nom = value
+					:	dadesHTML += `<div name=div${key}><p name=${key}>${value}</p></div>`
+
 			}
 
-			return dadesHTML;
+			return { dades:dadesHTML, nom: nom };
 		}
 
 		/**
@@ -82,12 +62,15 @@ class DadesPersonals extends HTMLElement {
 		
 	}
 
-	render(dadesHTML) {
-		this.innerHTML = `			
-			<h2>Dades personals</h2>
-			<div>
-				${dadesHTML}
-			</div>		
+	render({dades, nom}) {
+		this.innerHTML = `
+			<div name="divTitol"><h1 name="nom">${nom}</h1></div>
+			<div name="dades-personals">
+			<h2>Contacto</h2>
+				<div>
+					${dades}
+				</div>
+			</div>
 		`
 	}
 }

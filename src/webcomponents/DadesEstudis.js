@@ -68,11 +68,13 @@ class DadesEstudis extends HTMLElement {
 	}
 
 	render(dadesHTML) {
-		this.innerHTML = `			
-			<h2>Datos académicos</h2>
-			<div>
+		this.innerHTML = `
+		<div name="dades-estudis">			
+			<h2>Formación Académica</h2>
+			<div name="dada-estudis">
 				${dadesHTML}
-			</div>		
+			</div>
+		</div>
 		`
 	}
 }
