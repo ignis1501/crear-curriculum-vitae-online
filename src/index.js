@@ -46,6 +46,44 @@ DomElements.textAreas.forEach((textArea) => {
 	//textArea.style.height = (textArea.scrollHeight) + 'px';
 })
 
+DomElements.buttonCanviCSS.forEach((botoCanviCss) => {
+	console.log('buttonCanviCss', botoCanviCss);
+	console.log('buttonCanviCss name', botoCanviCss.name);
+
+	botoCanviCss.addEventListener('click', () => {
+		const style = document.querySelectorAll('head style');
+		const style2 = `curriculum-vitae {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 5px 5px;
+
+	font-family: Cambria, Garamond, Georgia, Times, 'Times New Roman', serif;
+
+	overflow: auto;
+	width: 100%;
+
+	>div {
+		padding: 0.5rem;
+	}
+
+	p {
+		font-size: 1rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+		text-transform: uppercase;
+	}
+		}`;
+		style[0].textContent = style2;
+		/* console.log('style', style);
+		console.log('style 0', style[0]);
+		console.log('style 0', style[0].dataset.viteDevId);
+		style[0].dataset.viteDevId = `./styles/${botoCanviCss.name}`; */
+		//DomElements.obtenirDadesButton.click();
+	})
+})
+
 /* afegirProfesioButton.addEventListener('click', (event) => {
 	afegirProfesio(event);
 }) */
@@ -61,7 +99,7 @@ const afegirDadaPersonal = (event) => {
 	let divsDades = document.querySelectorAll('div[class="dades-personals"]');
 	
 	let htmlDadaPersonal = `<div name="divDada" class="dades-personals">
-			<input type="text" name="dada${divsDades.length-3}" data-tipus="dades-personals" placeholder="dada"/><button name="eliminarInput">Eliminar</button>
+			<input type="text" name="dada${divsDades.length-3}" data-tipus="dades-personals" placeholder="añade un dato personalizado."/><button name="eliminarInput">Eliminar</button>
 		</div>`
 	divsDades[divsDades.length-1].insertAdjacentHTML("afterEnd", htmlDadaPersonal);
 }

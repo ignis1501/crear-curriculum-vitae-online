@@ -1,8 +1,72 @@
+:root {
+	--background-color-win-98: rgb(187, 187, 187);
+}
+
 input {
 	width: auto;
 }
 
 textarea {
-	width: 100%;
+	width: 98%;
 	/*height: max-content;*/
+}
+
+div[name="formularis"] {
+	background-color: var(--background-color-win-98);
+	padding-top: 0.1rem;
+	
+}
+
+.div-form-container {
+
+	background-color: var(--background-color-win-98);
+	margin: 2rem;	
+
+	box-shadow: 2px 1px 1px rgb(17, 17, 17);	
+
+	h2 {
+		font-family: roboto;
+		text-transform: uppercase;
+		width: 100%;
+		color: white;
+
+		margin-top: 0px;
+
+		background: linear-gradient(to right, rgb(3, 3, 87), rgb(13, 152, 216));
+	}
+
+	input, textarea {
+		border-right: 2px solid white;
+		border-bottom: 2px solid white;
+		border-left: 2px solid black;
+		border-top: 2px solid black;
+
+		display: block;
+	}
+}
+
+button {
+	background-color: var(--background-color-win-98);
+
+	cursor: pointer;
+
+	box-shadow: 1px 1px 1px rgb(17, 17, 17);
+
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid white;
+	border-top: 2px solid white;
+
+	
+}
+button:hover {
+	background-color: rgb(212, 207, 207);
+	scale: 1.05;
+}
+
+.boder-win-98 {
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid white;
+	border-top: 2px solid white;
 }

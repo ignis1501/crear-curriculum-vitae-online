@@ -6,10 +6,12 @@ const obtenirDadesButton = document.querySelector('button[name="obtenirDades"]')
 const mostrarOcultarFormsButton = document.querySelector('button[name="mostrarOcultarForms"]');
 const divFormulariDades = document.querySelector('div[name="formularis"]');
 const textAreas = document.querySelectorAll('textarea');
+const buttonCanviCSS = document.querySelectorAll("button[data-tipus='canviCSS']");
+const elementLinkCss = document.getElementById("css-cv");
 /* const formDadesPersonals = document.getElementById('dades-personals-form');
 const formDadesEstudis = document.querySelectorAll('div[name="div-form-estudis"] form');
 const formDadesProfesionals = document.querySelectorAll('div[name="div-form-profesio"] form'); */
 
 
 
-export default { dadesPersonalsForm, dadesProfesionalsForm, dadesEstudisForm, obtenirDadesButton, mostrarOcultarFormsButton, divFormulariDades, textAreas };
+export default { dadesPersonalsForm, dadesProfesionalsForm, dadesEstudisForm, obtenirDadesButton, mostrarOcultarFormsButton, divFormulariDades, textAreas, buttonCanviCSS, elementLinkCss };

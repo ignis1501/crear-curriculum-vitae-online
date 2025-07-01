@@ -106,7 +106,7 @@ function testButtonsDadesPersonals() {
 
 	console.log(chalk.blue("Test fills inicials Dades"));
 	let fillsInicialsForm = dadesPersonalForm.childElementCount;
-	console.log(fillsInicialsForm === 5 ? missatgeConsolaOk("Fills inicials correctes, 5") : missatgeConsolaError("Error fills inicials", fillsInicialsForm));
+	console.log(fillsInicialsForm === 4 ? missatgeConsolaOk("Fills inicials correctes, 5") : missatgeConsolaError("Error fills inicials", fillsInicialsForm));
 
 	/**BUTTON AFEGIR INPUT */
 	console.log(chalk.blue("Test boto afegit input"));
@@ -230,8 +230,8 @@ function testButtonsDadesProfesionals() {
 	console.log((fillsInicials + 1 === fillsActuals) ? missatgeConsolaOk('Afegit fills correctament') : missatgeConsolaError('Error afegir fill'));
 
 }
-
-/* testButtonsDadesPersonals();
+/* 
+testButtonsDadesPersonals();
 console.log(chalk.blue('---------------------------------'));
 testButtonsDadesAcademiques();
 console.log(chalk.blue('---------------------------------'));

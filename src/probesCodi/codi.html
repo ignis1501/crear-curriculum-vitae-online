@@ -166,6 +166,7 @@
 	</div>
 	<button onclick="generarPDF()">Descargar PDF</button>
 	<button onclick="ocultarResum()">Proba GRID none</button>
+	<button onclick="cambiarCSS()">Canviar CSS</button>
 
 	<script>
 		//Conservar salts de línea en obtenir value textarea
@@ -216,6 +217,11 @@
 			(element.style.display === 'none')
 			?	element.style.display = ''
 			:	element.style.display = 'none'
+		}
+	</script>
+	<script>
+		function cambiarCSS() {
+			document.querySelector('head link').href = './styles/style2.css';
 		}
 	</script>
 </body>
