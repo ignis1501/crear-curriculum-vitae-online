@@ -231,8 +231,8 @@ function testButtonsDadesProfesionals() {
 
 }
 
-testButtonsDadesPersonals();
+/* testButtonsDadesPersonals();
 console.log(chalk.blue('---------------------------------'));
 testButtonsDadesAcademiques();
 console.log(chalk.blue('---------------------------------'));
-testButtonsDadesProfesionals();
+testButtonsDadesProfesionals(); */

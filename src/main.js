@@ -1,5 +1,5 @@
 //import './style.css'
-import './styles/style3.css'
+import './styles/style1.css'
 //import './styles/style2.css'
 //import './styles/style3.css'
 //import './styles/style4.css'
