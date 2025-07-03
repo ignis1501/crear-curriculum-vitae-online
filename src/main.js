@@ -1,5 +1,5 @@
 //import './style.css'
-import './styles/style1.css'
+import './styles/style3.css'
 //import './styles/style2.css'
 //import './styles/style3.css'
 //import './styles/style4.css'
@@ -107,7 +107,7 @@ document.querySelector('#app').innerHTML = `
 	<div>
 		<button name="mostrarOcultarForms">Mostrar/Ocultar entrada de datos</button>
 	</div>
-	<div>
+	<div name="divBotonsEstils">
 		<h3>Selecciona el estilo de Curriculum</h3>
 		<div>
 			<button name="style1" data-tipus="canviCSS">1</button>
@@ -119,6 +119,9 @@ document.querySelector('#app').innerHTML = `
 
 	<hr><hr>
 	<div id="container" name="container"></div>
+	<div name="divDescargarPDF">
+		<button>Descargar PDF</button>
+	</div>
 	
 	
 `

@@ -1,8 +1,6 @@
-import DomElements from './dom/domElements.js'
-
-/* let dadesPersonals = {}
-let dadesEstudis = {}
-let dadesProfesionals = {} */
+import DomElements from './dom/domElements.js';
+import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
 
 console.log('index');
 
@@ -37,64 +35,28 @@ DomElements.mostrarOcultarFormsButton.addEventListener('click', () => {
 })
 
 DomElements.textAreas.forEach((textArea) => {
-	console.log("textArea", textArea);
 	
 	textArea.addEventListener('keyup', () => {
 		textArea.style.height = 'auto';
 		textArea.style.height = (textArea.scrollHeight) + 'px';
 	})
-	//textArea.style.height = (textArea.scrollHeight) + 'px';
 })
 
-DomElements.buttonCanviCSS.forEach((botoCanviCss) => {
-	console.log('buttonCanviCss', botoCanviCss);
-	console.log('buttonCanviCss name', botoCanviCss.name);
+DomElements.buttonCanviCSS.forEach((botoCanviCss) => {	
 
 	botoCanviCss.addEventListener('click', () => {
-		const style = document.querySelectorAll('head style');
-		const style2 = `curriculum-vitae {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	gap: 5px 5px;
-
-	font-family: Cambria, Garamond, Georgia, Times, 'Times New Roman', serif;
-
-	overflow: auto;
-	width: 100%;
-
-	>div {
-		padding: 0.5rem;
-	}
-
-	p {
-		font-size: 1rem;
-	}
-
-	h2 {
-		font-size: 1.5rem;
-		text-transform: uppercase;
-	}
-		}`;
-		style[0].textContent = style2;
-		/* console.log('style', style);
-		console.log('style 0', style[0]);
-		console.log('style 0', style[0].dataset.viteDevId);
-		style[0].dataset.viteDevId = `./styles/${botoCanviCss.name}`; */
-		//DomElements.obtenirDadesButton.click();
+		const styles = document.querySelectorAll('head style');
+		const estil = botoCanviCss.name;
+		const style = DomElements.styles[estil];
+		styles[0].textContent = style;
 	})
 })
 
-/* afegirProfesioButton.addEventListener('click', (event) => {
-	afegirProfesio(event);
-}) */
-
-/* eliminarProfesioButton.addEventListener('click', (event) => {
-	eliminarElementAnterior(event, false);
-}) */
-
+DomElements.buttonDescarregarPdf.addEventListener('click', () => {
+	generarPDF();
+})
 
 const afegirDadaPersonal = (event) => {
-	//event.preventDefault()	
 
 	let divsDades = document.querySelectorAll('div[class="dades-personals"]');
 	
@@ -135,60 +97,6 @@ const afegirEstudis = (event) => {
 
 }
 
-/* const quitarEstudis = (event) => {
-	event.preventDefault()
-	let divsFormEstudis = document.querySelectorAll('div[name="div-form-estudis"] form');
-	(divsFormEstudis.length > 1)
-		?	divsFormEstudis[divsFormEstudis.length-1].remove()
-		:	alert('No se puede eliminar el último elemento')
-} */
-
-/* const crearLista = (event) => {
-	event.preventDefault()
-	let elementPrevi = event.target.previousElementSibling;
-	let ul = `
-		<li style="list-style: none;" name="li0">
-			<input placeHolder="Titulo de la lista" type="text"/>
-			
-		</li>
-		<button onClick="afegirLi(event)">+</button>
-		<button onClick="eliminarLi(event)">-</button>
-	`
-	elementPrevi.insertAdjacentHTML("beforeEnd", ul);
-	
-	const form = document.getElementById('dades-procesionals-form');
-	let dades = obtenirDadesFormularis(form);
-}
-
-const afegirLi = (event) => {
-	event.preventDefault();
-	const ul = event.target.parentNode;
-	const nextLi = ul.querySelectorAll('li').length
-	const li = `
-	<li name=${nextLi} style="list-style: none;">
-		<input placeHolder="Lista" type="text" name="elementLi${nextLi}"/>			
-	</li>` 
-	ul.insertAdjacentHTML("beforeEnd", li);
-}
-
-const eliminarLi = (event) => {
-	event.preventDefault();
-
-	const ul = event.target.parentNode;
-	const lis = ul.querySelectorAll('li');
-	if (lis.length === 0) {
-		while (ul.firstChild) {
-			ul.removeChild(ul.firstChild);
-		  }
-		return
-	}
-	lis[lis.length-1].remove();
-
-	
-
-
-} */
-
 const afegirProfesio = (event) => {
 	//event.preventDefault();
 
@@ -209,11 +117,6 @@ const afegirProfesio = (event) => {
 		:	divProfesio.insertAdjacentHTML("afterbegin", nouDivProfesio)
 }
 
-/* const quitarProfesio = (event) => {
-	event.preventDefault();
-	event.target.parentNode.parentNode.remove()
-
-} */
 
 const obtenirDadesFormularis = (form) => {
 	const formData = new FormData(form);
@@ -235,39 +138,6 @@ const obtenirDadesFormularis = (form) => {
 
 	return dades
 }
-
-/* const obtenirDadesFormularisCompostos = (form) => {
-	const dades = [];
-	//console.log(dades.length, 'dades.length');
-	//console.log(dades, 'dades en entrar a compostos');
-	//console.log('form.length', form.length);
-	for (let i = 0; i < form.length; i++) {
-		const dada = {};
-		const formData = new FormData(form[i]);
-		//console.log(formData, 'FormData');
-		console.log('formDatalength', Array.from(formData.values()).length);
-		if (Object.entries(Object.fromEntries(formData)).length !== 0) {
-			for (const [key, value] of formData.entries()) {
-				
-				if ((!value) || (value === '')) {
-					console.log('value', value);
-					continue;
-				}
-				console.log('value', value);
-				let valor = sanititzarValor(value);
-				dada[key] = valor;
-				
-				//console.log(dada, 'dada');
-			}
-			dades.push(dada);			
-		} else {
-			console.log('formData buit');
-		}
-	}
-	//console.log('obtenirDadesCompostFin dades', dades);
-
-	return dades
-} */
 
 const crearObjecteDades = (formDades) => {
 	console.log("crearObjecteDades", formDades);
@@ -309,27 +179,12 @@ const obtenirDades = () => {
 
 	const formDadesPersonals = document.getElementById('dades-personals-form');
 	dadesPersonals = obtenirDadesFormularis(formDadesPersonals);
-	/* console.log('dadesPersonals length', Object.keys(dadesPersonals).length);
-	if (Object.keys(dadesPersonals).length !== 0) {
-		afegirCustomElement('dades-personals');
-		enviarCustomEvent('dades-personals', dadesPersonals);
-	} */
 
 	const formDadesEstudis = document.querySelectorAll('div[name="div-form-estudis"] form');
-	dadesEstudis = crearObjecteDades(formDadesEstudis);
-	/* console.log('dadesEstudis length', dadesEstudis.length);
-	if (dadesEstudis.length !== 0) {
-		afegirCustomElement('dades-estudis');
-		enviarCustomEvent('dades-estudis', dadesEstudis);
-	} */	
+	dadesEstudis = crearObjecteDades(formDadesEstudis);	
 
 	const formDadesProfesionals = document.querySelectorAll('div[name="div-form-profesio"] form');
 	dadesProfesionals = crearObjecteDades(formDadesProfesionals);
-	/* console.log('dadesProfesionals length', dadesProfesionals.length);
-	if (dadesProfesionals.length !== 0) {
-		afegirCustomElement('dades-profesionals');
-		enviarCustomEvent('dades-profesionals', dadesProfesionals);
-	} */
 
 	const formResumProfesional = document.getElementById('resum-profesional');
 	resumProfesional = obtenirDadesFormularis(formResumProfesional);
@@ -351,14 +206,6 @@ const obtenirDades = () => {
 
 	afegirCustomElement('curriculum-vitae');
 	enviarCustomEvent('curriculum-vitae', dades);
-
-	/* afegirCustomElement('dades-personals');
-	afegirCustomElement('dades-estudis');
-	afegirCustomElement('dades-profesionals');
-
-	enviarCustomEvent('dades-personals', dadesPersonals);
-	enviarCustomEvent('dades-estudis', dadesEstudis);
-	enviarCustomEvent('dades-profesionals', dadesProfesionals); */
 	
 }
 
@@ -375,8 +222,6 @@ const afegirCustomElement = (nom) => {
 
 const enviarCustomEvent = (enviarANomEvent, dades) => {
 	const elementEvent = document.querySelector(enviarANomEvent);
-	//console.log("elementEvent", elementEvent);
-	//console.log("enviarANomEvent", enviarANomEvent);
 
 	const detailEvent = {
 		'dades-personals': {
@@ -400,8 +245,6 @@ const enviarCustomEvent = (enviarANomEvent, dades) => {
 			dades: dades
 		}
 	}
-
-	//console.log("detailEvent[enviarANomEvent].nomEvent", detailEvent[enviarANomEvent].nomEvent);
 	
 	elementEvent.dispatchEvent(new CustomEvent(detailEvent[enviarANomEvent].nomEvent, {
 		detail: {
@@ -423,5 +266,35 @@ export const eliminarElementAnterior = (event) => {
 	event.target.parentNode.remove();//eliminar el node pare
 }
 
+/**CREAR PDF */
+//  1. Incluir las librerías
 
-//export default { eliminarElementAnterior }
+//  2. Capturar el contenido
+function generarPDF() {
+	const element = document.querySelector('div[name="container"]'); // Reemplaza con el ID de tu elemento
+	//document.body.style.zoom = "100%";
+	html2canvas(element, { scale: 3 }).then(canvas => {
+		const imgData = canvas.toDataURL('image/png', 1.0);
+
+		//  3. Generar el PDF
+		const pdf = new jsPDF();
+		const imgWidth = 210; // Ancho de la página A4 en mm
+		const pageHeight = 297; // Alto de la página A4 en mm
+		const imgHeight = canvas.height * imgWidth / canvas.width;
+		let heightLeft = imgHeight;
+		let position = 0;
+
+		pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+		heightLeft -= pageHeight;
+
+		while (heightLeft >= 0) {
+			position = heightLeft - imgHeight;
+			pdf.addPage();
+			pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+			heightLeft -= pageHeight;
+		}
+
+		//  4. Descargar el PDF
+		pdf.save('cv-exportado.pdf');
+	});
+}

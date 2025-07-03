@@ -114,7 +114,7 @@ class CurriculumVitae extends HTMLElement {
 
 			return `		
 					<div name="dades-profesionals"> 
-						<h2>Experciencia Laboral</h2>
+						<h2>Experiencia Laboral</h2>
 						<div name="dada-profesio">
 							${dadesHTML}
 						</div>

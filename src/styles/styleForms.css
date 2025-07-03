@@ -70,3 +70,25 @@ button:hover {
 	border-left: 2px solid white;
 	border-top: 2px solid white;
 }
+
+@media print {
+	body {
+		print-color-adjust: economy;
+	}
+
+	div[name="formularis"] {
+		display: none;
+	}
+
+	div[name="divBotonsEstils"] {
+		display: none;
+	}
+
+	hr {
+		display: none;
+	}
+
+	button {
+		display: none;
+	}
+}
