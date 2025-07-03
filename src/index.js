@@ -53,7 +53,8 @@ DomElements.buttonCanviCSS.forEach((botoCanviCss) => {
 })
 
 DomElements.buttonDescarregarPdf.addEventListener('click', () => {
-	generarPDF();
+	//generarPDF();
+	window.print();
 })
 
 const afegirDadaPersonal = (event) => {
@@ -270,7 +271,7 @@ export const eliminarElementAnterior = (event) => {
 //  1. Incluir las librerías
 
 //  2. Capturar el contenido
-function generarPDF() {
+/* function generarPDF() {
 	const element = document.querySelector('div[name="container"]'); // Reemplaza con el ID de tu elemento
 	//document.body.style.zoom = "100%";
 	html2canvas(element, { scale: 3 }).then(canvas => {
@@ -297,4 +298,4 @@ function generarPDF() {
 		//  4. Descargar el PDF
 		pdf.save('cv-exportado.pdf');
 	});
-}
+} */
