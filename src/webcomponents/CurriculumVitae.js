@@ -73,7 +73,7 @@ class CurriculumVitae extends HTMLElement {
 		const dadesEstudisHtml = (dades) => {
 			let dadesHTML = ''
 			for (const [key, value] of Object.entries(dades)) {
-				dadesHTML += `<div name=estudis${key}>`;
+				dadesHTML += `<div name=estudis${key} class="dada-estudis">`;
 				console.log(key);
 				for (const [subKey, subValue] of Object.entries(value)) {
 					dadesHTML += `<div name=div${subKey}><p name=${subKey}>${subValue}</p></div>`
