@@ -1,6 +1,6 @@
 import DomElements from './dom/domElements.js';
-import { jsPDF } from 'jspdf';
-import html2canvas from 'html2canvas';
+//import { jsPDF } from 'jspdf';
+//import html2canvas from 'html2canvas';
 
 console.log('index');
 

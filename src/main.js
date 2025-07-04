@@ -114,6 +114,8 @@ document.querySelector('#app').innerHTML = `
 			<button name="style2" data-tipus="canviCSS">2</button>
 			<button name="style3" data-tipus="canviCSS">3</button>
 			<button name="style4" data-tipus="canviCSS">4</button>
+			<button name="style5" data-tipus="canviCSS">5</button>
+			<button name="style6" data-tipus="canviCSS">6</button>
 		</div>
 	</div>
 

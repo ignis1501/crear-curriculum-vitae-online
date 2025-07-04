@@ -73,7 +73,8 @@ button:hover {
 
 @media print {
 	body {
-		print-color-adjust: economy;
+		print-color-adjust: exact;
+		-webkit-print-color-adjust: exact;
 	}
 
 	div[name="formularis"] {
