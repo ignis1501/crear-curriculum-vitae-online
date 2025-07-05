@@ -25,9 +25,10 @@ loadTemplate(); */
 console.log('main');
 
 document.querySelector('#app').innerHTML = `
-	<div name="formularis">
+	<h1>Introduce los datos que se añadirán a tu <strong>curriculum</strong></h1>
+	<div name="formularis">		
 		<div class="div-form-container boder-win-98">
-			<h2>Datos Personales</h2>
+			<h2>Datos Personales del <strong>curriculum</strong></h2>
 			<form id="dades-personals-form">
 				<div name="divNom" class="dades-personals">
 					<input type="text" name="nom" data-tipus="dades-personals" placeholder="Nombre completo"/>
@@ -45,7 +46,7 @@ document.querySelector('#app').innerHTML = `
 		</div>
 
 		<div class="div-form-container boder-win-98">
-			<h2>Presentación / Resumen profesional</h2>
+			<h2>Presentación / Resumen profesional para el <strong>CV</strong></h2>
 			<form id="resum-profesional">
 				<div name="resum-profesional">
 					<textarea name="resum-profesional" placeholder="En esta sección puedes llevar a cabo un pequeño resumen de tu trayectoría profesional o realizar una presentación personalizada para el puesto al que quieres aspirar."></textarea>	
@@ -54,7 +55,7 @@ document.querySelector('#app').innerHTML = `
 		</div>
 
 		<div class="div-form-container boder-win-98">
-			<h2>Habilidades / Aptitudes</h2>
+			<h2>Habilidades / Aptitudes que quieras destacar en tu <strong>Curriculum Vitae</strong></h2>
 			<form id="habilitats-profesionals">
 				<div name="habilitats-profesionals">
 					<textarea name="habilitats-profesionals" placeholder="En esta sección tienes la opción de enumerar aquellas habilidades que posees y te pueden ayudar a destacar en el puesto que persigues."></textarea>	
@@ -64,7 +65,7 @@ document.querySelector('#app').innerHTML = `
 		</div>
 			
 		<div class="div-form-container boder-win-98">
-			<h2>Datos Académicos</h2>
+			<h2>Datos Académicos para el <strong>CV</strong></h2>
 			<div id="div-form-estudis" name="div-form-estudis">			
 				<form name="dades-estudis-form">
 					<div name="divEstudis" class="dades-estudis">
@@ -82,7 +83,7 @@ document.querySelector('#app').innerHTML = `
 			
 			
 		<div class="div-form-container boder-win-98">
-			<h2>Datos Profesionales</h2>	
+			<h2>Datos Profesionales más destacados para tu Curriculum</h2>	
 			<div id="div-form-profesio" name="div-form-profesio" class="dades-profesionals">
 				<form id="dades-profesionals-form">
 					<input type="text" name="data-profesional" placeholder="Fechas inicio - Fecha fin"/>
