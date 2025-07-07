@@ -71,6 +71,33 @@ button:hover {
 	border-top: 2px solid white;
 }
 
+/*TABS*/
+div[name="tab1"], div[name="tab2"] {
+	background-color: var(--background-color-win-98);
+
+	box-shadow: 1px 1px 1px rgb(17, 17, 17);
+
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid white;
+	border-top: 2px solid white;
+}
+
+div[name="tab1"] {
+	padding: 0.5rem;
+}
+/* .contingut-tab {
+	display: none;
+} */
+
+.visible {
+	display: block;
+}
+
+.invisible {
+	display: none;
+}
+
 @media print {
 	body {
 		print-color-adjust: exact;
@@ -90,6 +117,14 @@ button:hover {
 	}
 
 	button {
+		display: none;
+	}
+
+	/* div:not(div[name="container"]) {
+		display: none;
+	} */
+	
+	#app > h1 {
 		display: none;
 	}
 }

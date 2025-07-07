@@ -3,12 +3,17 @@ const dadesPersonalsForm = document.getElementById('dades-personals-form');
 const dadesProfesionalsForm = document.getElementById('div-form-profesio');
 const dadesEstudisForm = document.getElementById('div-form-estudis');
 const obtenirDadesButton = document.querySelector('button[name="obtenirDades"]');
-const mostrarOcultarFormsButton = document.querySelector('button[name="mostrarOcultarForms"]');
+//const mostrarOcultarFormsButton = document.querySelector('button[name="mostrarOcultarForms"]');
 const divFormulariDades = document.querySelector('div[name="formularis"]');
 const textAreas = document.querySelectorAll('textarea');
 const buttonCanviCSS = document.querySelectorAll('button[data-tipus="canviCSS"]');
 const elementLinkCss = document.getElementById('css-cv');
-const buttonDescarregarPdf = document.querySelector('div[name="divDescargarPDF"] button')
+const buttonDescarregarPdf = document.querySelector('div[name="divDescargarPDF"] button');
+const buttonTabs = document.querySelectorAll('button[class="tab"]');
+const contingutTabs = document.querySelectorAll('.contingut-tab');
+const tab1 = document.querySelector('div[name="tab1"]');
+const tab2 = document.querySelector('div[name="tab2"]');
+const tab3 = document.querySelector('div[name="tab3"]');
 const styles = {
 	style1: 
 	`
@@ -1155,4 +1160,4 @@ const formDadesProfesionals = document.querySelectorAll('div[name="div-form-prof
 
 
 
-export default { dadesPersonalsForm, dadesProfesionalsForm, dadesEstudisForm, obtenirDadesButton, mostrarOcultarFormsButton, divFormulariDades, textAreas, buttonCanviCSS, elementLinkCss, styles, buttonDescarregarPdf };
+export default { dadesPersonalsForm, dadesProfesionalsForm, dadesEstudisForm, obtenirDadesButton, divFormulariDades, textAreas, buttonCanviCSS, elementLinkCss, styles, buttonDescarregarPdf, buttonTabs, contingutTabs, tab1, tab2, tab3 };

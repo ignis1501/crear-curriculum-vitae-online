@@ -30,9 +30,9 @@ DomElements.obtenirDadesButton.addEventListener('click', () => {
 	obtenirDades();
 })
 
-DomElements.mostrarOcultarFormsButton.addEventListener('click', () => {
+/* DomElements.mostrarOcultarFormsButton.addEventListener('click', () => {
 	mostrarOcultarElement(DomElements.divFormulariDades);
-})
+}) */
 
 DomElements.textAreas.forEach((textArea) => {
 	
@@ -55,6 +55,17 @@ DomElements.buttonCanviCSS.forEach((botoCanviCss) => {
 DomElements.buttonDescarregarPdf.addEventListener('click', () => {
 	//generarPDF();
 	window.print();
+})
+
+DomElements.buttonTabs.forEach((boto) => {
+	boto.addEventListener('click', () => {
+		console.log(boto.dataset.tab);
+		const tab = document.querySelector(`div[name="${boto.dataset.tab}"]`);
+		ocultarTabs();
+		//tab.classList.remove('invisible');
+		mostrarTab(tab);
+		/**Switch per ocultar tots el elements tab i mostrar només el que estigui actiu */
+	})
 })
 
 const afegirDadaPersonal = (event) => {
@@ -207,6 +218,9 @@ const obtenirDades = () => {
 
 	afegirCustomElement('curriculum-vitae');
 	enviarCustomEvent('curriculum-vitae', dades);
+
+	ocultarTabs();
+	mostrarTab(DomElements.tab3);
 	
 }
 
@@ -261,6 +275,16 @@ const mostrarOcultarElement = (element) => {
 	(element.style.display === 'none')
 	?	element.style.display = ''
 	:	element.style.display = 'none'
+}
+
+const ocultarTabs = () => {
+	DomElements.contingutTabs.forEach((element) => {
+		element.classList.add("invisible");
+	})
+}
+
+const mostrarTab = (tab) => {
+	tab.classList.remove('invisible');
 }
 
 export const eliminarElementAnterior = (event) => {	
