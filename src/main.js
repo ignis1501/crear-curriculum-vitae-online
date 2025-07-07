@@ -7,7 +7,7 @@ import viteLogo from '/vite.svg'
 console.log('main');
 
 document.querySelector('#app').innerHTML = `
-	<h1>Crea tu <strong>curriculum</strong></h1>
+	<h1>Crea tu Currículum Personalizado y Optimizado para ATS: Mejora tus Candidaturas para los Mejores Trabajos</h1>
 
 	<div class="tab-container">
 		<button class="tab" data-tab="tab1">Información y Consejos</button>
@@ -17,8 +17,7 @@ document.querySelector('#app').innerHTML = `
 
 	<div name="tab1" class="contingut-tab">
 		<h2>
-            Crea tu <strong>Currículum</strong> Personaliza y Optimizado para ATS: Mejora tus Candidaturas para los
-            Mejores Trabajos
+            Crea tu <strong>currículum</strong>
         </h2>
         <p>
             En el entorno tan competitivo que nos encontramos, tener un currículum que resalte marca la diferencia entre
