@@ -39,7 +39,6 @@ div[name="divresum-profesional"] {
 	padding: 20px 0 20px 0;
 	border-radius: 20px;
 
-	/*background-color: rgba(64, 161, 206, 0.719);*/
 }
 
 div[name="divTitol"]{
@@ -53,7 +52,6 @@ div[name="divTitol"]{
 	border-bottom: 2px double rgb(23, 11, 128);
 	padding: 20px 0 20px 0;
 
-	/*background-color: rgb(74, 167, 211);*/
 	border-radius: 16px;
 
 	h1 {
@@ -77,13 +75,7 @@ div[name="dades-personals"] {
 	grid-row-start: 1;
 	grid-row-end: 1;
 
-	/*background-color: rgba(116, 200, 240, 0.719);*/
 	border-radius: 16px;
-
-
-	/* >div {
-		text-align: center;
-	} */
 
 	h2 {
 		display: none;
@@ -94,9 +86,7 @@ div[name="divhabilitats"] {
 	grid-column-start: 1;
 	grid-column-end: 4;
 	grid-row-start: 4;
-	/*grid-row-end: 6;*/
 
-	/*background-color: rgba(116, 200, 240, 0.719);*/
 	border-radius: 16px;
 
 	>div {
@@ -121,13 +111,6 @@ div[name="dades-profesionals"] {
 	border-bottom: 2px double rgb(23, 11, 128);
 	padding: 20px 0 20px 0;
 	border-radius: 20px;
-
-
-	/*background-color: rgba(137, 43, 226, 0.267);*/
-
-	/* >div {
-		border-bottom: 2px solid rgb(32, 31, 31);
-	} */
 }
 	
 
@@ -135,7 +118,10 @@ div[name="dades-profesionals"] {
 	display: grid;/*treure'l dona un efecte interesant*/
 	grid-template-columns: 1fr 2fr;
 
-	/*border-bottom: 2px solid black;*/
+	>div {
+		padding: 6px;
+	}
+
 
 	div[name="divnom-profesional"] {
 		background: rgba(85, 76, 76, 0.3);
@@ -151,35 +137,32 @@ div[name="dades-profesionals"] {
 		color:brown;
 		}
 	}
+}
 
-	din[name="divdetalls-profesionals"] {
-		grid-row-start: 1;
-	}
+.dada-profesio:nth-child(odd) {
+	background-color: rgba(169, 172, 175, 0.212);
+	border-radius: 20px;
 }
 
 div[name="dades-estudis"] {
 	grid-column-start: 1;
 	grid-column-end: 4;
 	grid-row-start: 5;
-	/*grid-row-end: 6;*/
 
 	border-top: 2px double rgb(23, 11, 128);
 	border-bottom: 2px double rgb(23, 11, 128);
 	padding: 20px 0 20px 0;
 	border-radius: 20px;
-
-
-	/*background-color: rgba(128, 255, 0, 0.226);*/
-
-	/* >div {
-		border-bottom: 2px solid rgb(51, 49, 49);
-	} */
 }
 	
 div[name="dada-estudis"] {
 	>div {
 		display: grid;
 		grid-template-columns: 1fr 2fr;
+
+
+		padding: 10px;
+
 
 		div[name="divdata-estudis"] {
 			grid-column-start: 1;
@@ -208,7 +191,11 @@ div[name="dada-estudis"] {
 		div[name="divcentre-estudis"] {
 			grid-column-start: 1;
 			grid-column-end: 2;
-		}
-	}
-	
+		}		
+	}	
+}
+
+.dada-estudis:nth-child(odd) {
+	background-color: rgba(169, 172, 175, 0.212);
+	border-radius: 20px;
 }

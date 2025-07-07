@@ -1,6 +1,6 @@
 import DomElements from './dom/domElements.js';
-import { jsPDF } from 'jspdf';
-import html2canvas from 'html2canvas';
+//import { jsPDF } from 'jspdf';
+//import html2canvas from 'html2canvas';
 
 console.log('index');
 
@@ -30,9 +30,9 @@ DomElements.obtenirDadesButton.addEventListener('click', () => {
 	obtenirDades();
 })
 
-DomElements.mostrarOcultarFormsButton.addEventListener('click', () => {
+/* DomElements.mostrarOcultarFormsButton.addEventListener('click', () => {
 	mostrarOcultarElement(DomElements.divFormulariDades);
-})
+}) */
 
 DomElements.textAreas.forEach((textArea) => {
 	
@@ -53,7 +53,19 @@ DomElements.buttonCanviCSS.forEach((botoCanviCss) => {
 })
 
 DomElements.buttonDescarregarPdf.addEventListener('click', () => {
-	generarPDF();
+	//generarPDF();
+	window.print();
+})
+
+DomElements.buttonTabs.forEach((boto) => {
+	boto.addEventListener('click', () => {
+		console.log(boto.dataset.tab);
+		const tab = document.querySelector(`div[name="${boto.dataset.tab}"]`);
+		ocultarTabs();
+		//tab.classList.remove('invisible');
+		mostrarTab(tab);
+		/**Switch per ocultar tots el elements tab i mostrar només el que estigui actiu */
+	})
 })
 
 const afegirDadaPersonal = (event) => {
@@ -206,6 +218,9 @@ const obtenirDades = () => {
 
 	afegirCustomElement('curriculum-vitae');
 	enviarCustomEvent('curriculum-vitae', dades);
+
+	ocultarTabs();
+	mostrarTab(DomElements.tab3);
 	
 }
 
@@ -262,6 +277,16 @@ const mostrarOcultarElement = (element) => {
 	:	element.style.display = 'none'
 }
 
+const ocultarTabs = () => {
+	DomElements.contingutTabs.forEach((element) => {
+		element.classList.add("invisible");
+	})
+}
+
+const mostrarTab = (tab) => {
+	tab.classList.remove('invisible');
+}
+
 export const eliminarElementAnterior = (event) => {	
 	event.target.parentNode.remove();//eliminar el node pare
 }
@@ -270,7 +295,7 @@ export const eliminarElementAnterior = (event) => {
 //  1. Incluir las librerías
 
 //  2. Capturar el contenido
-function generarPDF() {
+/* function generarPDF() {
 	const element = document.querySelector('div[name="container"]'); // Reemplaza con el ID de tu elemento
 	//document.body.style.zoom = "100%";
 	html2canvas(element, { scale: 3 }).then(canvas => {
@@ -297,4 +322,4 @@ function generarPDF() {
 		//  4. Descargar el PDF
 		pdf.save('cv-exportado.pdf');
 	});
-}
+} */

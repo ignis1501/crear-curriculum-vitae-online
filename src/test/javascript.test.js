@@ -230,8 +230,8 @@ function testButtonsDadesProfesionals() {
 	console.log((fillsInicials + 1 === fillsActuals) ? missatgeConsolaOk('Afegit fills correctament') : missatgeConsolaError('Error afegir fill'));
 
 }
-/* 
-testButtonsDadesPersonals();
+
+/* testButtonsDadesPersonals();
 console.log(chalk.blue('---------------------------------'));
 testButtonsDadesAcademiques();
 console.log(chalk.blue('---------------------------------'));
