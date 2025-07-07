@@ -1,228 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="codi.css">
 	<title>Document</title>
 </head>
+
 <body>
-	<div name="container">
-		<div name="divTitol">
-			<h1 name="titol">Lorem Ipsum is simply</h1>
-		</div>
-		<div name="dades-resum-profesional">
-			<h2>Resumen Profesional</h2>
-			<p>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-			</p>
-		</div>
-		<div name="dades-personals">
-			<h2>Contacto</h2>
-			<div name="nom" class="dades-personals"><p>Lorem Ipsum is simply</p></div>
-			<div name="telefon" class="dades-personals"><p>666666666</p></div>
-			<div name="email" class="dades-personals"><p>Lorem Ipsum</p></div>
-			<div name="linkedin" class="dades-personals"><p>@Lorem Ipsum</p></div>
-			<div name="linkedin" class="dades-personals"><p>@Lorem Ipsum</p></div>
-		</div>
-		
-		<div name="dades-aptituds">
-			<h2>Habilidades</h2>
-			<p>Lorem</p><p>Ipsum</p><p>is simply dummy </p><p>ext of the printing</p><p>and typesetting industry</p>
+
+	<h1>Crea tu <strong>curriculum</strong></h1>
+
+	<div class="tab-container">
+		<button class="tab" data-tab="tab1">Pestaña 1</button>
+		<button class="tab" data-tab="tab2">Pestaña 2</button>
+		<button class="tab" data-tab="tab3">Pestaña 3</button>
+	</div>
+
+	<div name="tab1">
+
+	</div>
+	<div name="tab2">
+		<div name="formularis">
+			<div class="div-form-container boder-win-98">
+				<h2>Datos Personales del <strong>curriculum</strong></h2>
+				<form id="dades-personals-form">
+					<div name="divNom" class="dades-personals">
+						<input type="text" name="nom" data-tipus="dades-personals" placeholder="Nombre completo" />
+					</div>
+					<div name="divTelefon" class="dades-personals">
+						<input type="text" name="teléfono" data-tipus="dades-personals"
+							placeholder="Teléfono de contacto" />
+					</div>
+					<div name="divEmail" class="dades-personals">
+						<input type="email" name="email" data-tipus="dades-personals" placeholder="Email de contacto" />
+					</div>
+					<div>
+						<button name="afegirDada" title="Añadir dato">+</button>
+					</div>
+				</form>
+			</div>
+
+			<div class="div-form-container boder-win-98">
+				<h2>Presentación / Resumen profesional para el <strong>CV</strong></h2>
+				<form id="resum-profesional">
+					<div name="resum-profesional">
+						<textarea name="resum-profesional"
+							placeholder="En esta sección puedes llevar a cabo un pequeño resumen de tu trayectoría profesional o realizar una presentación personalizada para el puesto al que quieres aspirar."></textarea>
+					</div>
+				</form>
+			</div>
+
+			<div class="div-form-container boder-win-98">
+				<h2>Habilidades / Aptitudes que quieras destacar en tu <strong>Curriculum Vitae</strong></h2>
+				<form id="habilitats-profesionals">
+					<div name="habilitats-profesionals">
+						<textarea name="habilitats-profesionals"
+							placeholder="En esta sección tienes la opción de enumerar aquellas habilidades que posees y te pueden ayudar a destacar en el puesto que persigues."></textarea>
+					</div>
+				</form>
+				<p>* Separa las habilidades por saltos de línea (ENTER).</p>
+			</div>
+
+			<div class="div-form-container boder-win-98">
+				<h2>Datos Académicos para el <strong>CV</strong></h2>
+				<div id="div-form-estudis" name="div-form-estudis">
+					<form name="dades-estudis-form">
+						<div name="divEstudis" class="dades-estudis">
+							<input type="text" name="data-estudis" placeholder="Fecha inicio - Fecha fin" />
+							<input type="text" name="nom-estudis" placeholder="Titulo estudios" />
+							<input type="text" name="centre-estudis" placeholder="Centro estudios" />
+						</div>
+						<button name="eliminarSeccio">Eliminar</button>
+					</form>
+					<div>
+						<button name="afegirEstudis" title="Añadir Estudios">+</button>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="div-form-container boder-win-98">
+				<h2>Datos Profesionales más destacados para tu Curriculum</h2>
+				<div id="div-form-profesio" name="div-form-profesio" class="dades-profesionals">
+					<form id="dades-profesionals-form">
+						<input type="text" name="data-profesional" placeholder="Fechas inicio - Fecha fin" />
+						<input type="text" name="nom-profesional" placeholder="Puesto" />
+						<input type="text" name="centre-profesional" placeholder="Empresa" />
+						<textarea name="detalls-profesional"
+							placeholder="En esta sección puedes añadir tantos detalles cómo creas convenientes sobre tus funciones, cometidos o las habilidades que has tenido que usar en este puesto de trabajo"></textarea>
+						<button name="eliminarSeccio">Eliminar</button>
+					</form>
+					<div>
+						<button name="afegirProfesio" title="Añadir Experiencia">+</button>
+					</div>
+				</div>
+			</div>
+
+
+			<div>
+				<button name="obtenirDades">Actualizar Datos</button>
+			</div>
+
 		</div>
 
-		<div name="dades-profesionals" class="dades-profesionals">
-			<h2>Experiencia laboral</h2>
-			<div name="profesio0" class="dada-profesio">
-				<div>
-					<div name="divdata-profesional">
-						<p name="data-profesional">Agosto 2020 - Actualmente</p>
-					</div>
-					<div name="divnom-profesional">
-						<p name="nom-profesional">Gestor Backoffice</p>
-					</div>
-					<div name="divcentre-profesional">
-						<p name="centre-profesional">Goldenline SL</p>
-					</div>
-				</div>
-				
-				<div name="divdetalls-profesional">
-					<p name="detalls-profesional">
-- Revisión de documentación.
-- Revisión de los expedientes de los clientes.
-- Atención a clientes de B2B y B2C.- Revisión de documentación. Fila que se sale del total de espacio total que permite la página, para revisar si a la hora de imprimir el documento aparece esta información
-- Revisión de los expedientes de los clientes.
-- Atención a clientes de B2B y B2C.- Revisión de documentación.
-- Revisión de los expedientes de los clientes.
-- Atención a clientes de B2B y B2C.- Revisión de documentación.
-- Revisión de los expedientes de los clientes.
-- Atención a clientes de B2B y B2C.- Revisión de documentación.
-- Revisión de los expedientes de los clientes.
-- Atención a clientes de B2B y B2C.- Revisión de documentación.
-- Revisión de los expedientes de los clientes.
-- Atención a clientes de B2B y B2C.</p>
-				</div>
-			</div>	
-			<div name="profesio1" class="dada-profesio">
-				<div>
-					<div name="divdata-profesional">
-						<p name="data-profesional">Agosto 2020 - Actualmente</p>
-					</div>
-					<div name="divnom-profesional">
-						<p name="nom-profesional">Gestor Backoffice</p>
-					</div>
-					<div name="divcentre-profesional">
-						<p name="centre-profesional">Goldenline SL</p>
-					</div>
-				</div>
-				
-				<div name="divdetalls-profesional">
-					<p name="detalls-profesional">
-- Revisión de documentación.
-- Revisión de los expedientes de los clientes.
-- Atención a clientes de B2B y B2C.- Revisión de documentación.
-- Revisión de los expedientes de los clientes.
-- Atención a clientes de B2B y B2C.- Revisión de documentación.
-- Revisión de los expedientes de los clientes.
-- Atención a clientes de B2B y B2C.- Revisión de documentación.
-- Revisión de los expedientes de los clientes.
-- Atención a clientes de B2B y B2C.- Revisión de documentación.
-- Revisión de los expedientes de los clientes.
-- Atención a clientes de B2B y B2C.</p>
-				</div>
-			</div>	
-			<div name="profesio2" class="dada-profesio">
-				<div>
-					<div name="divdata-profesional">
-						<p name="data-profesional">Agosto 2020 - Actualmente</p>
-					</div>
-					<div name="divnom-profesional">
-						<p name="nom-profesional">Gestor Backoffice</p>
-					</div>
-					<div name="divcentre-profesional">
-						<p name="centre-profesional">Goldenline SL</p>
-					</div>
-				</div>
-				
-				<div name="divdetalls-profesional">
-					<p name="detalls-profesional">
-- Revisión de documentación.
-- Revisión de los expedientes de los clientes.
-- Atención a clientes de B2B y B2C.- Revisión de documentación.
-- Revisión de los expedientes de los clientes.
-- Atención a clientes de B2B y B2C.- Revisión de documentación.
-- Revisión de los expedientes de los clientes.
-- Atención a clientes de B2B y B2C.- Revisión de documentación.
-- Revisión de los expedientes de los clientes.
-- Atención a clientes de B2B y B2C.- Revisión de documentación.
-- Revisión de los expedientes de los clientes.
-- Atención a clientes de B2B y B2C.</p>
-				</div>
-			</div>	
+		<div>
+			<button name="mostrarOcultarForms">Mostrar/Ocultar entrada de datos</button>
+		</div>
+		<div name="divBotonsEstils">
+			<h3>Selecciona el estilo de Curriculum</h3>
+			<div>
+				<button name="style1" data-tipus="canviCSS">1</button>
+				<button name="style2" data-tipus="canviCSS">2</button>
+				<button name="style3" data-tipus="canviCSS">3</button>
+				<button name="style4" data-tipus="canviCSS">4</button>
+				<button name="style5" data-tipus="canviCSS">5</button>
+				<button name="style6" data-tipus="canviCSS">6</button>
+			</div>
 		</div>
 
-		<div name="dades-estudis">
-			<h2>Formación Académica</h2>
-			<div name="dada-estudis" class="dades-estudis">
-				<div name="estudis0">
-					<div name="divdata-estudis">
-						<p name="data-estudis">Diciembre 2025</p>
-					</div>
-					<div name="divtitol-estudis">
-						<p name="titol-estudis">Auxiliar administrativo</p>
-					</div>
-					<div name="divcentre-estudis">
-						<p name="centre-estudis">IOC</p>
-					</div>
-				</div>	
-			</div>
-			<div name="dada-estudis" class="dades-estudis">
-				<div name="estudis1">
-					<div name="divdata-estudis">
-						<p name="data-estudis">Diciembre 2025</p>
-					</div>
-					<div name="divtitol-estudis">
-						<p name="titol-estudis">Auxiliar administrativo</p>
-					</div>
-					<div name="divcentre-estudis">
-						<p name="centre-estudis">IOC</p>
-					</div>
-				</div>	
-			</div>
-			<div name="dada-estudis" class="dades-estudis">
-				<div name="estudis2">
-					<div name="divdata-estudis">
-						<p name="data-estudis">Diciembre 2025</p>
-					</div>
-					<div name="divtitol-estudis">
-						<p name="titol-estudis">Auxiliar administrativo: Curso de auxiliar administrativo, centrado en las funciones de gestión documental y contabilidad.</p>
-					</div>
-					<div name="divcentre-estudis">
-						<p name="centre-estudis">IOC</p>
-					</div>
-				</div>	
-			</div>
+		<hr>
+		<hr>
+		<div id="container" name="container"></div>
+		<div name="divDescargarPDF">
+			<button>Descargar PDF</button>
 		</div>
 	</div>
-	<button onclick="generarPDF()">Descargar PDF</button>
-	<button onclick="ocultarResum()">Proba GRID none</button>
-	<button onclick="cambiarCSS()">Canviar CSS</button>
+	<div name="tab3">
 
-	<script>
-		//Conservar salts de línea en obtenir value textarea
-		/* var textarea = document.getElementById("codigo").value;
-		var textarea_line = textarea.replace(new RegExp("\\n", "g"), "<br>");
-		document.getElementById("show_textarea").innerHTML = textarea_line; */
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-	<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-	<script>
-		//  1. Incluir las librerías
+	</div>
 
-		//  2. Capturar el contenido
-		function generarPDF() {
-			const element = document.querySelector('div[name="container"]'); // Reemplaza con el ID de tu elemento
-			html2canvas(element).then(canvas => {
-				const imgData = canvas.toDataURL('image/png', 1.0);
-
-				//  3. Generar el PDF
-				const pdf = new jspdf.jsPDF();
-				const imgWidth = 210; // Ancho de la página A4 en mm
-				const pageHeight = 297; // Alto de la página A4 en mm
-				const imgHeight = canvas.height * imgWidth / canvas.width;
-				let heightLeft = imgHeight;
-				let position = 0;
-
-				pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-				heightLeft -= pageHeight;
-
-				while (heightLeft >= 0) {
-					position = heightLeft - imgHeight;
-					pdf.addPage();
-					pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-					heightLeft -= pageHeight;
-				}
-
-				//  4. Descargar el PDF
-				pdf.save('cv-exportado.pdf');
-			});
-		}
-
-		//  Llamar a la función al hacer clic en un botón
-		//<button onclick="generarPDF()">Descargar PDF</button>
-	</script>
-	<script>
-		function ocultarResum() {
-			let element = document.querySelector('div[name="dades-resum-profesional"]');
-			(element.style.display === 'none')
-			?	element.style.display = ''
-			:	element.style.display = 'none'
-		}
-	</script>
-	<script>
-		function cambiarCSS() {
-			document.querySelector('head link').href = './styles/style2.css';
-		}
-	</script>
 </body>
+
 </html>

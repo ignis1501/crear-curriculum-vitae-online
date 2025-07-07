@@ -1,276 +1,124 @@
-div[name="container"] {
-	display: grid;
-	grid-template-columns: 1fr 2fr;
-	/* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
-	gap: 5px 5px;
+:root {
+	--background-color-win-98: rgb(187, 187, 187);
+}
 
-	font-family: Cambria, Garamond, Georgia, Times, 'Times New Roman', serif;
+input {
+	width: auto;
+}
 
-	overflow: auto;
-	width: 100%;
+textarea {
+	width: 98%;
+	/*height: max-content;*/
+}
 
-	>div {
-		padding: 0.5rem;
-	}
+div[name="formularis"] {
+	background-color: var(--background-color-win-98);
+	padding-top: 0.1rem;
+	
+}
 
-	p {
-		font-size: 1rem;
-	}
+.div-form-container {
+
+	background-color: var(--background-color-win-98);
+	margin: 2rem;	
+
+	box-shadow: 2px 1px 1px rgb(17, 17, 17);	
 
 	h2 {
-		font-size: 1.5rem;
-	}
-}
-
-div[name="divTitol"]{
-	grid-column-start: 1;
-	grid-column-end: 3;
-
-	display: grid;
-	justify-content: end;
-
-	border-top: 2px double rgb(23, 11, 128);
-	border-bottom: 2px double rgb(23, 11, 128);
-	padding: 20px 0 20px 0;
-
-	background-color: rgb(74, 167, 211);
-	border-radius: 16px;
-
-	h1 {
-		
-		color:rgba(0, 0, 0, 0.74);
-		font-weight: 900;
-		text-decoration: underline;
-
+		font-family: roboto;
 		text-transform: uppercase;
-		font-size: 2rem;
-		
-		
+		width: 100%;
+		color: white;
 
-	}
-}
+		margin-top: 0px;
 
-div[name="dades-resum-profesional"] {
-	grid-column-start: 1;
-	grid-column-end: 3;
-	grid-row-start: 2;
-	grid-row-end: 2;
-
-	background-color: rgba(64, 161, 206, 0.719);
-}
-
-div[name="dades-personals"] {	
-	grid-column-start: 1;
-	grid-column-end: 1;
-	grid-row-start: 3;
-	grid-row-end: 3;
-
-	background-color: rgba(116, 200, 240, 0.719);
-	border-radius: 16px;
-
-
-	>div {
-		text-align: center;
-	}
-}
-
-div[name="dades-aptituds"] {
-	grid-column-start: 1;
-	grid-column-end: 1;
-	grid-row-start: 4;
-	grid-row-end: 6;
-
-	background-color: rgba(116, 200, 240, 0.719);
-	border-radius: 16px;
-}
-
-div[name="dades-profesionals"] {
-	grid-column-start: 2;
-	grid-column-end: 3;
-	grid-row-start: 3;
-	grid-row-end: 4;
-
-	background-color: rgba(137, 43, 226, 0.267);
-
-	>div {
-		border-bottom: 2px solid rgb(32, 31, 31);
+		background: linear-gradient(to right, rgb(3, 3, 87), rgb(13, 152, 216));
 	}
 
-	.dada-profesio {
-		display: grid;
-		grid-template-columns: 1fr 2fr;
+	input, textarea {
+		border-right: 2px solid white;
+		border-bottom: 2px solid white;
+		border-left: 2px solid black;
+		border-top: 2px solid black;
 
-		div[name="divnom-profesional"] {
-			background: rgba(85, 76, 76, 0.3);
-			border-radius: 16px;
-			box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-			backdrop-filter: blur(5px);
-			border: 1px solid rgba(255, 253, 253, 0.700);
-
-			margin: 0.3rem;
-			>p {
-			font-weight: 900;
-			text-align: center;
-			}
-		}
-	}
-}
-
-div[name="dades-estudis"] {
-	grid-column-start: 2;
-	grid-column-end: 3;
-	grid-row-start: 5;
-	grid-row-end: 6;
-
-	background-color: rgba(128, 255, 0, 0.226);
-
-	>div {
-		border-bottom: 2px solid rgb(51, 49, 49);
-	}
-	div[name="dada-estudis"] {
-		>div {
-			display: grid;
-			grid-template-columns: 1fr 2fr;
-
-			div[name="divdata-estudis"] {
-				grid-column-start: 1;
-				grid-column-end: 2;
-			}
-
-			div[name="divtitol-estudis"] {
-				grid-column-start: 2;
-				grid-column-end: 3;
-
-				background: rgba(85, 76, 76, 0.3);
-				border-radius: 16px;
-				box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-				backdrop-filter: blur(5px);
-				border: 1px solid rgba(255, 253, 253, 0.700);
-
-				margin: 0.3rem;
-				>p {
-					font-weight: 900;
-					text-align: center;
-				}
-			}
-
-			div[name="divcentre-estudis"] {
-				grid-column-start: 2;
-				grid-column-end: 3;
-			}
-		}
-		
-	}
-}
-
-h2 {
-	text-transform: uppercase;
-}
-
-
-
-
-
-
-/* div[name="container"] {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-}
-
-h1 {
-	width: 100%;
-	text-align: end;
-	background-color: rgba(255, 127, 176, 0.411);
-}
-
-div[name="dades-personals"] {	
-	flex: 1 1 25%;
-	background-color: rgba(127, 255, 212, 0.411);
-
-	
-}
-
-div[name="dades-profesionals"] {
-	width: 75%;
-	flex: 0 0 auto;
-	margin-right: auto;
-	background-color: rgba(137, 43, 226, 0.267);
-}
-
-div[name="dades-estudis"] {
-	background-color: rgba(128, 255, 0, 0.226);
-	flex: 0 0 auto;
-	width: 75%;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* div[name='container'] {
-	display: grid;
-	grid-template-areas: 
-	"none			titol				titol"
-	"dadesPersonals	dadesProfesionals	dadesProfesionals"
-	"dadesPersonals	dadesEstudis		dadesEstudis";
-
-	div {
-		padding: 0.2rem;
-	}
-}
-
-h1[name='titol'] {
-	grid-area: titol;
-	background: rgba(70, 70, 182, 0.411);
-}
-
-div[name='dades-personals'] {
-	grid-area: dadesPersonals;
-	background: rgba(70, 70, 182, 0.411);
-}
-
-div[name='dades-profesionals'] {
-	grid-area: dadesProfesionals;
-	background: rgba(70, 182, 104, 0.411);
-
-}
-
-.dada-profesio {
-	display: flex;
-	border-bottom: 2px solid white;
-	
-	div {
 		display: block;
 	}
-	div[name="divdetalls-profesional"] {
-		align-content: center;
+}
 
-		pre{
-			display: flex;
-			flex-wrap: wrap;
-		}
+button {
+	background-color: var(--background-color-win-98);
+
+	cursor: pointer;
+
+	box-shadow: 1px 1px 1px rgb(17, 17, 17);
+
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid white;
+	border-top: 2px solid white;
+
+	
+}
+button:hover {
+	background-color: rgb(212, 207, 207);
+	scale: 1.05;
+}
+
+.boder-win-98 {
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid white;
+	border-top: 2px solid white;
+}
+
+@media print {
+	body {
+		print-color-adjust: exact;
+		-webkit-print-color-adjust: exact;
+	}
+
+	div[name="formularis"] {
+		display: none;
+	}
+
+	div[name="divBotonsEstils"] {
+		display: none;
+	}
+
+	hr {
+		display: none;
+	}
+
+	button {
+		display: none;
 	}
 }
 
-div[name='dades-estudis'] {
-	grid-area: dadesEstudis;
-	background: rgba(150, 70, 182, 0.411);
 
+
+
+/*TABS*/
+.tab-container {
+  display: flex; /* Para colocar los botones uno al lado del otro */
 }
 
+.tab {
+  background-color: #f0f0f0; /* Color de fondo */
+  border: 1px solid #ccc; /* Borde */
+  border-bottom: none; /* Eliminar borde inferior */
+  border-radius: 5px 5px 0 0; /* Bordes redondeados arriba */
+  padding: 10px 15px; /* Espaciado interno */
+  cursor: pointer; /* Cursor tipo mano */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
 
+.tab:hover {
+  background-color: #ddd; /* Cambiar color al pasar el ratón */
+}
 
-
- */
+/* Estilo para la pestaña activa (opcional) */
+.tab.active {
+  background-color: #fff; /* Color de fondo para la pestaña activa */
+  border-bottom: 1px solid #fff; /* Borde inferior para simular la elevación */
+  /*  Puedes agregar más estilos aquí para resaltar la pestaña activa. */
+}
