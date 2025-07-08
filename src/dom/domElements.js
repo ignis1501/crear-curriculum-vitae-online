@@ -145,17 +145,17 @@ div[name="tab1"] {
 }`;
 const styles = {
 	style1: 
-	`../styles/style1.css`,
+	`./src/styles/style1.css`,
 	style2: 
-	`../styles/style2.css`,
+	`./src/styles/style2.css`,
 	style3: 
-	`../styles/style3.css`,
+	`./src/styles/style3.css`,
 	style4: 
-	`../styles/style4.css`,
+	`./src/styles/style4.css`,
 	style5:
-	`../styles/style5.css`,
+	`./src/styles/style5.css`,
 	style6:
-	`../styles/style6.css`,
+	`./src/styles/style6.css`,
 	
 }
 
