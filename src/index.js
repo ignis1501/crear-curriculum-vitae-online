@@ -39,7 +39,7 @@ DomElements.buttonCanviCSS.forEach((botoCanviCss) => {
 		const headStyles = document.querySelector('head link[rel="stylesheet"]');
 		const estil = botoCanviCss.name;
 		const style = DomElements.styles[estil];
-		headStyles[0].href = style;
+		headStyles.href = style;
 	})
 })
 
