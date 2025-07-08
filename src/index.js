@@ -36,10 +36,10 @@ DomElements.textAreas.forEach((textArea) => {
 DomElements.buttonCanviCSS.forEach((botoCanviCss) => {	
 
 	botoCanviCss.addEventListener('click', () => {
-		const styles = document.querySelectorAll('head style');
+		const headStyles = document.querySelector('head link[rel="stylesheet"]');
 		const estil = botoCanviCss.name;
 		const style = DomElements.styles[estil];
-		styles[0].textContent = style;
+		headStyles.href = style;
 	})
 })
 

@@ -1,5 +1,5 @@
-import './styles/style1.css'
-import './styles/styleForms.css'
+/* import './styles/style1.css'
+import './styles/styleForms.css' */
 
 
 console.log('main');
