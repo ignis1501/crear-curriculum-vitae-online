@@ -1,0 +1,185 @@
+@import url("styleForms.css");
+
+curriculum-vitae {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 5px 5px;
+
+	font-family: Cambria, Garamond, Georgia, Times, 'Times New Roman', serif;
+
+	overflow: auto;
+	width: 100%;
+
+	>div {
+		padding: 0.5rem;
+	}
+
+	p {
+		font-size: 1rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+		text-transform: uppercase;
+	}
+}
+
+
+
+div[name="divresum-profesional"] {
+	grid-column-start: 3;
+	grid-column-end: 4;
+	grid-row-start: 3;
+
+}
+
+div[name="divTitol"]{
+	grid-column-start: 2;
+	grid-column-end: span 4;
+
+	display: grid;
+	justify-content: end;
+
+	h1 {
+		
+		color:rgb(82, 11, 11);
+		font-weight: 900;
+
+		text-transform: uppercase;
+		font-size: 2rem;	
+
+	}
+}
+	
+div[name="dades-personals"] {
+		
+	grid-column-start: 3;
+	grid-column-end: 4;
+	grid-row-start: 2;
+	grid-row-end: 3;
+
+	margin-top: -2rem;
+
+	p {
+		color:rgb(82, 11, 11);
+	}
+
+	h2 {
+		display: none;
+	}
+}
+
+div[name="divhabilitats"] {
+	grid-column-start: 1;
+	grid-column-end: 1;
+	grid-row-start: 3;
+
+	background: linear-gradient(rgb(131, 92, 7), rgb(218, 14, 14));
+
+	h2, p {
+		color: white;
+	}
+
+	h2 {
+		text-decoration: underline;
+	}
+}
+	
+div[name="dades-profesionals"] {
+	grid-column-start: 2;
+	grid-column-end: 4;
+	grid-row-start: 4;
+
+}
+	
+
+.dada-profesio {
+
+	padding: 10px;
+
+	div[name="divnom-profesional"] {
+		background: rgba(85, 76, 76, 0.3);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgb(82, 11, 11);
+		backdrop-filter: blur(5px);
+		border: 1px solid rgb(82, 11, 11);
+
+		margin: 0.3rem;
+		>p {
+		font-weight: 900;
+		text-align: center;
+		}
+	}
+
+	din[name="divdetalls-profesionals"] {
+		grid-row-start: 1;
+	}
+}
+
+.dada-profesio:nth-child(odd) {
+	background-color: rgba(174, 176, 179, 0.212);
+	border-radius: 20px;
+}
+
+div[name="dades-estudis"] {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 4;
+
+	background: linear-gradient(rgb(218, 14, 14),rgb(100, 6, 6));
+	margin-top: -1rem;
+
+	>div {
+		border-bottom: 2px solid rgb(255, 253, 253);
+	}
+
+	h2, p {
+		color: white;
+	}
+
+	h2 {
+		text-decoration: underline;
+	}
+}
+	
+div[name="dada-estudis"] {
+	>div {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+
+		padding: 10px;
+
+		div[name="divdata-estudis"] {
+			grid-column-start: 1;
+			grid-column-end: 2;
+		}
+
+		div[name="divnom-estudis"] {
+			grid-column-start: 2;
+			grid-column-end: 3;
+
+			background: rgba(85, 76, 76, 0.3);
+			border-radius: 16px;
+			box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+			backdrop-filter: blur(5px);
+			border: 1px solid rgba(255, 253, 253, 0.700);
+
+			margin: 0.3rem;
+			>p {
+				font-weight: 900;
+				text-align: center;
+			}
+		}
+
+		div[name="divcentre-estudis"] {
+			grid-column-start: 1;
+			grid-column-end: 2;
+		}
+	}
+	
+}
+
+.dada-estudis:nth-child(odd) {
+	background-color: rgba(169, 172, 175, 0.212);
+	border-radius: 20px;
+}
