@@ -36,7 +36,7 @@ DomElements.textAreas.forEach((textArea) => {
 DomElements.buttonCanviCSS.forEach((botoCanviCss) => {	
 
 	botoCanviCss.addEventListener('click', () => {
-		const headStyles = document.querySelector('head link[rel="stylesheet"]');
+		const headStyles = document.querySelector('head link[title="css-dinamic"]');
 		const estil = botoCanviCss.name;
 		const style = DomElements.styles[estil];
 		headStyles.href = style;
