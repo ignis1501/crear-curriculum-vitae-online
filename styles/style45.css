@@ -1,0 +1,7 @@
+/* timeline */
+div[name="dades-estudis"] div,
+div[name="dades-profesionals"] div {
+    border-left: 2px solid #555;
+    padding-left: 12px;
+    margin-bottom: 12px;
+}

@@ -1,0 +1,12 @@
+/* clasica */
+curriculum-vitae {
+    font-family: Georgia, serif;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.4rem;
+}
+
+section:empty { display: none; }

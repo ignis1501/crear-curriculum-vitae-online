@@ -1,0 +1,22 @@
+/* Moderna */
+curriculum-vitae {
+    font-family: Roboto, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+section {
+    padding-bottom: 20px;
+    border-bottom: 3px solid #444;
+    margin-bottom: 25px;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+section:empty { display: none; }

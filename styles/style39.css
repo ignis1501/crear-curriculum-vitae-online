@@ -1,0 +1,27 @@
+/* sidebar */
+curriculum-vitae {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  font-family: sans-serif;
+}
+
+aside {
+  background: #f0f0f0;
+  padding: 20px;
+}
+
+main {
+  padding: 20px;
+}
+
+section:empty {
+  display: none;
+}
+
+h1 {
+  padding: 10px;
+}
+
+div[name="divresum-profesional"] {
+  padding: 10px;
+}

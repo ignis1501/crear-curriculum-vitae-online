@@ -1,0 +1,44 @@
+/* Estilo Creativo - Fuentes modernas y colores llamativos */
+
+curriculum-vitae {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 40px;
+	font-family: 'Poppins', sans-serif;
+	padding: 30px;
+}
+
+h1 {
+	font-size: 2.6rem;
+	color: #8e44ad;
+	text-align: center;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 1.7rem;
+	color: #8e44ad;
+	border-bottom: 2px dashed #8e44ad;
+	margin-bottom: 15px;
+}
+
+div[name="dades-personals"], div[name="dades-estudis"], div[name="dades-profesionals"], div[name="habilitats"] {
+	background-color: #f8f9f9;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+div[name="dades-personals"] {
+	grid-column: span 2;
+	text-align: center;
+}
+
+div[name="dades-estudis"], div[name="dades-profesionals"], div[name="habilitats"] {
+	grid-column: span 1;
+}
+
+div[name="dades-profesionals"] div, div[name="dades-estudis"] div {
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+}

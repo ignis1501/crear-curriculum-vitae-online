@@ -1,0 +1,44 @@
+curriculum-vitae {
+    display: grid;
+    gap: 20px;
+    padding: 25px;
+    font-family: "Inter", sans-serif;
+}
+
+/* Ocultar secciones vacías */
+curriculum-vitae > div:empty {
+    display: none;
+}
+
+/* Áreas del grid */
+div[name="divTitol"] { grid-area: titol; }
+div[name="dades-personals"] { grid-area: personales; }
+div[name="divresum-profesional"] { grid-area: resum; }
+div[name="dades-estudis"] { grid-area: estudis; }
+div[name="dades-profesionals"] { grid-area: profesionals; }
+div[name="divhabilitats"] { grid-area: habilitats; }
+
+/*Silver Boxed Sections*/
+curriculum-vitae {
+    background: #fafafa;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "titol titol"
+        "personales resum"
+        "estudis profesionals"
+        "habilitats profesionals";
+}
+
+curriculum-vitae > div {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+div[name="divTitol"] {
+    background: none;
+    border: none;
+    text-align: center;
+    font-size: 2.5rem;
+}

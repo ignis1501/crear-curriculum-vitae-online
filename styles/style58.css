@@ -1,0 +1,36 @@
+/* PLANTILLA 3 — Beige elegante */
+
+curriculum-vitae {
+  background: #f7f3e9;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "titol titol"
+    "resum personales"
+    "estudis personales"
+    "profesionals habilitats";
+}
+
+div[name="divTitol"] {
+  grid-area: titol;
+}
+div[name="dades-personals"] {
+  grid-area: personales;
+}
+div[name="divresum-profesional"] {
+  grid-area: resum;
+}
+div[name="dades-estudis"] {
+  grid-area: estudis;
+}
+div[name="dades-profesionals"] {
+  grid-area: profesionals;
+}
+div[name="divhabilitats"] {
+  grid-area: habilitats;
+}
+
+div[name="dades-personals"] {
+  background: #e8dfd0;
+  padding: 20px;
+  border-left: 5px solid #5a4632;
+}

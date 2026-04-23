@@ -1,0 +1,28 @@
+curriculum-vitae {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  font-family: "Cambria", serif;
+  background: #fcf3cf;
+  padding: 10px;
+}
+
+div[name="divTitol"] {
+  grid-column: 1 / 4;
+  background: #b7950b;
+  color: white;
+  padding: 25px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+div[name] {
+  background: white;
+  border-radius: 14px;
+  padding: 15px;
+  border: 1px solid #f7dc6f;
+}
+
+section:empty {
+  display: none;
+}

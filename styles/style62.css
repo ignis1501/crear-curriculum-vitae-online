@@ -1,0 +1,45 @@
+curriculum-vitae {
+    display: grid;
+    gap: 20px;
+    padding: 25px;
+    font-family: "Inter", sans-serif;
+}
+
+/* Ocultar secciones vacías */
+curriculum-vitae > div:empty {
+    display: none;
+}
+
+/* Áreas del grid */
+div[name="divTitol"] { grid-area: titol; }
+div[name="dades-personals"] { grid-area: personales; }
+div[name="divresum-profesional"] { grid-area: resum; }
+div[name="dades-estudis"] { grid-area: estudis; }
+div[name="dades-profesionals"] { grid-area: profesionals; }
+div[name="divhabilitats"] { grid-area: habilitats; }
+
+/*Executive Blue (Estilo LinkedIn Premium)*/
+curriculum-vitae {
+    background: #f5f8fc;
+    grid-template-columns: 260px 1fr;
+    grid-template-areas:
+        "titol titol"
+        "personales resum"
+        "personales profesionals"
+        "estudis habilitats";
+}
+
+div[name="divTitol"] {
+    background: #0a66c2;
+    color: white;
+    padding: 25px;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+div[name="dades-personals"] {
+    background: #e1ecf7;
+    padding: 20px;
+    border-left: 6px solid #0a66c2;
+}

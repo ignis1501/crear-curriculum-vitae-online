@@ -1,0 +1,18 @@
+/* creativa */
+curriculum-vitae {
+    font-family: Georgia, serif;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    font-style: italic;
+}
+
+section {
+    border-top: 4px double #333;
+    padding-top: 15px;
+    margin-top: 25px;
+}
+
+section:empty { display: none; }

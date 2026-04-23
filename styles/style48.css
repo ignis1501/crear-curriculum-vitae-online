@@ -1,0 +1,8 @@
+/* clasica */
+section {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+section:empty { display: none; }

@@ -1,0 +1,36 @@
+/* PLANTILLA 2 — Columna izquierda negra */
+
+curriculum-vitae {
+  grid-template-columns: 280px 1fr;
+  grid-template-areas:
+    "personales titol"
+    "personales resum"
+    "personales estudis"
+    "personales profesionals"
+    "personales habilitats";
+}
+
+div[name="divTitol"] {
+  grid-area: titol;
+}
+div[name="dades-personals"] {
+  grid-area: personales;
+}
+div[name="divresum-profesional"] {
+  grid-area: resum;
+}
+div[name="dades-estudis"] {
+  grid-area: estudis;
+}
+div[name="dades-profesionals"] {
+  grid-area: profesionals;
+}
+div[name="divhabilitats"] {
+  grid-area: habilitats;
+}
+
+div[name="dades-personals"] {
+  background: #111;
+  color: white;
+  padding: 30px;
+}

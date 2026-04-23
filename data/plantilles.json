@@ -1,0 +1,352 @@
+[
+  {
+    "id": "1",
+    "categoria": "Elegante",
+    "urlCss": "styles/style1.css"
+  },
+  {
+    "id": "2",
+    "categoria": "Elegante",
+    "urlCss": "styles/style2.css"
+  },
+  {
+    "id": "3",
+    "categoria": "Elegante",
+    "urlCss": "styles/style3.css"
+  },
+  {
+    "id": "4",
+    "categoria": "Creativo",
+    "urlCss": "styles/style4.css"
+  },
+  {
+    "id": "5",
+    "categoria": "Creativo",
+    "urlCss": "styles/style5.css"
+  },
+  {
+    "id": "6",
+    "categoria": "Elegante",
+    "urlCss": "styles/style6.css"
+  },
+  {
+    "id": "7",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style7.css"
+  },
+  {
+    "id": "8",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style8.css"
+  },
+  {
+    "id": "9",
+    "categoria": "Moderno",
+    "urlCss": "styles/style9.css"
+  },
+  {
+    "id": "10",
+    "categoria": "Profesional",
+    "urlCss": "styles/style10.css"
+  },
+  {
+    "id": "11",
+    "categoria": "Profesional",
+    "urlCss": "styles/style11.css"
+  },
+  {
+    "id": "12",
+    "categoria": "Profesional",
+    "urlCss": "styles/style12.css"
+  },
+  {
+    "id": "13",
+    "categoria": "Profesional",
+    "urlCss": "styles/style13.css"
+  },
+  {
+    "id": "14",
+    "categoria": "Profesional",
+    "urlCss": "styles/style14.css"
+  },
+  {
+    "id": "15",
+    "categoria": "Creativo",
+    "urlCss": "styles/style15.css"
+  },
+  {
+    "id": "16",
+    "categoria": "Creativo",
+    "urlCss": "styles/style16.css"
+  },
+  {
+    "id": "17",
+    "categoria": "Profesional",
+    "urlCss": "styles/style17.css"
+  },
+  {
+    "id": "18",
+    "categoria": "Creativo",
+    "urlCss": "styles/style18.css"
+  },
+  {
+    "id": "20",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style20.css"
+  },
+  {
+    "id": "21",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style21.css"
+  },
+  {
+    "id": "22",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style22.css"
+  },
+  {
+    "id": "23",
+    "categoria": "Profesional",
+    "urlCss": "styles/style23.css"
+  },
+  {
+    "id": "24",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style24.css"
+  },
+  {
+    "id": "25",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style25.css"
+  },
+  {
+    "id": "26",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style26.css"
+  },
+  {
+    "id": "27",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style27.css"
+  },
+  {
+    "id": "28",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style28.css"
+  },
+  {
+    "id": "29",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style29.css"
+  },
+  {
+    "id": "30",
+    "categoria": "Profesional",
+    "urlCss": "styles/style30.css"
+  },
+  {
+    "id": "31",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style31.css"
+  },
+  {
+    "id": "32",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style32.css"
+  },
+  {
+    "id": "33",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style33.css"
+  },
+  {
+    "id": "34",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style34.css"
+  },
+  {
+    "id": "35",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style35.css"
+  },
+  {
+    "id": "36",
+    "categoria": "Creativo",
+    "urlCss": "styles/style36.css"
+  },
+  {
+    "id": "37",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style37.css"
+  },
+  {
+    "id": "38",
+    "categoria": "Profesional",
+    "urlCss": "styles/style38.css"
+  },
+  {
+    "id": "39",
+    "categoria": "Profesional",
+    "urlCss": "styles/style39.css"
+  },
+  {
+    "id": "40",
+    "categoria": "Profesional",
+    "urlCss": "styles/style40.css"
+  },
+  {
+    "id": "41",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style41.css"
+  },
+  {
+    "id": "42",
+    "categoria": "Profesional",
+    "urlCss": "styles/style42.css"
+  },
+  {
+    "id": "43",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style43.css"
+  },
+  {
+    "id": "44",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style44.css"
+  },
+  {
+    "id": "45",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style45.css"
+  },
+  {
+    "id": "46",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style46.css"
+  },
+  {
+    "id": "47",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style47.css"
+  },
+  {
+    "id": "48",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style48.css"
+  },
+  {
+    "id": "49",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style49.css"
+  },
+  {
+    "id": "50",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style50.css"
+  },
+  {
+    "id": "51",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style51.css"
+  },
+  {
+    "id": "52",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style52.css"
+  },
+  {
+    "id": "53",
+    "categoria": "Minimalista",
+    "urlCss": "styles/style53.css"
+  },
+  {
+    "id": "54",
+    "categoria": "Técnico/IT",
+    "urlCss": "styles/style54.css"
+  },
+  {
+    "id": "55",
+    "categoria": "Profesional",
+    "urlCss": "styles/style55.css"
+  },
+  {
+    "id": "56",
+    "categoria": "Profesional",
+    "urlCss": "styles/style56.css"
+  },
+  {
+    "id": "57",
+    "categoria": "Ejecutivo",
+    "urlCss": "styles/style57.css"
+  },
+  {
+    "id": "58",
+    "categoria": "Elegante",
+    "urlCss": "styles/style58.css"
+  },
+  {
+    "id": "59",
+    "categoria": "Profesional",
+    "urlCss": "styles/style59.css"
+  },
+  {
+    "id": "60",
+    "categoria": "Moderno",
+    "urlCss": "styles/style60.css"
+  },
+  {
+    "id": "61",
+    "categoria": "Moderno",
+    "urlCss": "styles/style61.css"
+  },
+  {
+    "id": "62",
+    "categoria": "Ejecutivo",
+    "urlCss": "styles/style62.css"
+  },
+  {
+    "id": "63",
+    "categoria": "Ejecutivo",
+    "urlCss": "styles/style63.css"
+  },
+  {
+    "id": "64",
+    "categoria": "Profesional",
+    "urlCss": "styles/style64.css"
+  },
+  {
+    "id": "65",
+    "categoria": "Ejecutivo",
+    "urlCss": "styles/style65.css"
+  },
+  {
+    "id": "66",
+    "categoria": "Moderno",
+    "urlCss": "styles/style66.css"
+  },
+  {
+    "id": "67",
+    "categoria": "Ejecutivo",
+    "urlCss": "styles/style67.css"
+  },
+  {
+    "id": "68",
+    "categoria": "Moderno",
+    "urlCss": "styles/style68.css"
+  },
+  {
+    "id": "69",
+    "categoria": "Creativo",
+    "urlCss": "styles/style69.css"
+  },
+  {
+    "id": "70",
+    "categoria": "Profesional",
+    "urlCss": "styles/style70.css"
+  },
+  {
+    "id": "71",
+    "categoria": "Ejecutivo",
+    "urlCss": "styles/style71.css"
+  }
+]

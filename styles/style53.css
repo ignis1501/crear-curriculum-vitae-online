@@ -1,0 +1,11 @@
+/* dev */
+curriculum-vitae {
+    font-family: "Fira Code", monospace;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+section:empty { display: none; }

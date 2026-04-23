@@ -1,0 +1,8 @@
+/* clasico */
+section {
+    border-top: 3px double #333;
+    padding-top: 15px;
+    margin-top: 20px;
+}
+
+section:empty { display: none; }

@@ -1,0 +1,36 @@
+/* Plantilla Moderna en Dos Columnas */
+
+curriculum-vitae {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-gap: 20px;
+	font-family: "Inter", Arial, sans-serif;
+	padding: 20px;
+}
+
+h1 {
+	grid-column: 1 / -1;
+	text-align: center;
+	font-size: 2.2rem;
+	margin-bottom: 10px;
+}
+
+section {
+	background: #ffffff;
+	border-radius: 8px;
+	padding: 15px;
+	border: 1px solid #e0e0e0;
+}
+
+section:empty {
+	display: none;
+}
+
+div[name="dades-personals"] {
+	text-align: center;
+}
+
+div[name="habilitats"] ul {
+	padding-left: 20px;
+	margin: 0;
+}

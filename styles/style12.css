@@ -1,0 +1,42 @@
+/* Estilo Listado Compacto - Organización tipo lista con menor espacio */
+
+curriculum-vitae {
+	display: grid;
+	grid-template-columns: 1fr;
+	font-family: 'Verdana', sans-serif;
+	padding: 20px;
+}
+
+h1 {
+	font-size: 2rem;
+	text-align: center;
+	color: #2980b9;
+}
+
+h2 {
+	font-size: 1.5rem;
+	color: #2980b9;
+	border-bottom: 2px solid #2980b9;
+	margin-bottom: 10px;
+}
+
+div[name="dades-personals"], div[name="dades-estudis"], div[name="dades-profesionals"], div[name="habilitats"] {
+	border: 1px solid #ccc;
+	background-color: #fff;
+	padding: 15px;
+	border-radius: 5px;
+}
+
+div[name="dades-personals"] {
+	text-align: center;
+}
+
+div[name="dades-estudis"], div[name="dades-profesionals"], div[name="habilitats"] {
+	margin-top: 10px;
+}
+
+div[name="dades-profesionals"] div, div[name="dades-estudis"] div {
+	padding: 5px 0;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #ccc;
+}

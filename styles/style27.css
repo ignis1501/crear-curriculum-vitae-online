@@ -1,0 +1,30 @@
+/* Minimalista */
+curriculum-vitae {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+section {
+    margin-bottom: 25px;
+}
+
+section:empty { display: none; }
+
+h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+div[name] {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}

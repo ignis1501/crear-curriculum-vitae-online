@@ -1,0 +1,45 @@
+/* Revista azul corporativa */
+curriculum-vitae {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 10px;
+	font-family: "Georgia", serif;
+	background: #e8f4fb;
+	padding: 10px;
+}
+
+div[name="divTitol"] {
+	grid-column: 1 / 4;
+	background: #2c82c9;
+	color: white;
+	padding: 20px;
+	border-radius: 12px;
+	text-align: center;
+	border-bottom: 4px solid #1b4f72;
+}
+
+div[name="dades-personals"] {
+	background: #d6eaf8;
+	border-radius: 12px;
+	padding: 15px;
+}
+
+div[name="divhabilitats"] {
+	background: #d6eaf8;
+	border-radius: 12px;
+	padding: 15px;
+}
+
+div[name="dades-profesionals"] {
+	grid-column: 2 / 4;
+	background: #fef9e7;
+	border-radius: 12px;
+	padding: 15px;
+}
+
+div[name="dades-estudis"] {
+	grid-column: 2 / 4;
+	background: #fcf3cf;
+	border-radius: 12px;
+	padding: 15px;
+}

@@ -1,0 +1,23 @@
+/* Plantilla Línea de Tiempo */
+
+curriculum-vitae {
+	font-family: "Roboto", sans-serif;
+	padding: 20px;
+}
+
+h1 {
+	text-align: center;
+	font-size: 2.2rem;
+	margin-bottom: 20px;
+}
+
+section:empty {
+	display: none;
+}
+
+div[name="dades-estudis"] div,
+div[name="dades-profesionals"] div {
+	border-left: 3px solid #3498db;
+	padding-left: 10px;
+	margin-bottom: 15px;
+}

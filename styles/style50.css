@@ -1,0 +1,9 @@
+/* docs */
+curriculum-vitae {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    max-width: 800px;
+    margin: auto;
+}
+
+section:empty { display: none; }

@@ -1,0 +1,51 @@
+/* Estilo Minimalista - CV limpio y simple */
+
+curriculum-vitae {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 20px;
+	width: 100%;
+}
+
+h1, h2, p {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	text-align: center;
+	font-size: 2.5rem;
+	color: #333;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 1.5rem;
+	color: #444;
+	margin-bottom: 15px;
+}
+
+div[name="dades-personals"], div[name="dades-estudis"], div[name="dades-profesionals"], div[name="habilitats"] {
+	border: 1px solid #ddd;
+	padding: 15px;
+	border-radius: 8px;
+	background-color: #f9f9f9;
+}
+
+div[name="dades-personals"] {
+	text-align: center;
+}
+
+div[name="dades-estudis"], div[name="dades-profesionals"], div[name="habilitats"] {
+	margin-top: 10px;
+}
+
+div[name="dades-profesionals"] div, div[name="dades-estudis"] div {
+	margin-bottom: 10px;
+}
+
+div[name="dades-personals"] h2, div[name="dades-estudis"] h2, div[name="dades-profesionals"] h2, div[name="habilitats"] h2 {
+	font-weight: normal;
+}

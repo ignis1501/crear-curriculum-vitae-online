@@ -1,0 +1,7 @@
+/* docs */
+h2 {
+    color: #0a66c2;
+    font-weight: 600;
+}
+
+section:empty { display: none; }

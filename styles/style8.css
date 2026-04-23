@@ -1,0 +1,41 @@
+/* Estilo Clásico - División clara por secciones */
+
+curriculum-vitae {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 30px;
+	font-family: 'Times New Roman', serif;
+	padding: 40px;
+}
+
+h1 {
+	font-size: 2.2rem;
+	text-align: center;
+	color: #4b4b4b;
+}
+
+h2 {
+	font-size: 1.6rem;
+	color: #555;
+	border-bottom: 2px solid #ddd;
+	padding-bottom: 5px;
+}
+
+div[name="dades-personals"], div[name="dades-estudis"], div[name="dades-profesionals"], div[name="habilitats"] {
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	padding: 20px;
+	background-color: #fff;
+}
+
+div[name="dades-personals"] {
+	grid-column: span 2;
+}
+
+div[name="dades-estudis"], div[name="dades-profesionals"], div[name="habilitats"] {
+	grid-column: span 1;
+}
+
+div[name="dades-profesionals"] div, div[name="dades-estudis"] div {
+	margin-bottom: 10px;
+}

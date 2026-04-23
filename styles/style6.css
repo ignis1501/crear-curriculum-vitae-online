@@ -1,0 +1,34 @@
+/* revista verde elegante */
+curriculum-vitae {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 12px;
+	font-family: "Cambria", serif;
+	background: #eafaf1;
+	padding: 10px;
+}
+
+div[name="divTitol"] {
+	grid-column: 1 / 4;
+	background: #27ae60;
+	color: white;
+	padding: 25px;
+	border-radius: 14px;
+	text-align: center;
+	border-bottom: 4px solid #145a32;
+}
+
+div[name="dades-personals"],
+div[name="divhabilitats"] {
+	background: #d5f5e3;
+	border-radius: 14px;
+	padding: 15px;
+}
+
+div[name="dades-profesionals"],
+div[name="dades-estudis"] {
+	grid-column: 2 / 4;
+	background: #fef9e7;
+	border-radius: 14px;
+	padding: 15px;
+}

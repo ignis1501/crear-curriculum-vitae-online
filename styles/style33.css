@@ -1,0 +1,18 @@
+/* Corporativa */
+curriculum-vitae {
+    font-family: Calibri, sans-serif;
+    padding: 25px;
+}
+
+h1 {
+    color: #003366;
+    text-align: center;
+}
+
+h2 {
+    color: #003366;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 4px;
+}
+
+section:empty { display: none; }

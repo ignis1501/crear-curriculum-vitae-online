@@ -1,0 +1,44 @@
+/* Estilo Profesional Formal - Sobrio y elegante */
+
+curriculum-vitae {
+	display: grid;
+	grid-template-columns: 1fr;
+	font-family: 'Georgia', serif;
+	background-color: #f4f4f4;
+	padding: 30px;
+}
+
+h1 {
+	font-size: 2.3rem;
+	color: #2c3e50;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+h2 {
+	font-size: 1.6rem;
+	color: #2c3e50;
+	border-bottom: 2px solid #ecf0f1;
+	padding-bottom: 5px;
+	margin-bottom: 20px;
+}
+
+div[name="dades-personals"], div[name="dades-estudis"], div[name="dades-profesionals"], div[name="habilitats"] {
+	border: 1px solid #bdc3c7;
+	background-color: #ffffff;
+	padding: 20px;
+	border-radius: 8px;
+}
+
+div[name="dades-personals"] {
+	text-align: center;
+}
+
+div[name="dades-estudis"], div[name="dades-profesionals"], div[name="habilitats"] {
+	margin-top: 10px;
+}
+
+div[name="dades-profesionals"] div, div[name="dades-estudis"] div {
+	border-bottom: 1px solid #bdc3c7;
+	margin-bottom: 10px;
+}

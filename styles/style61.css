@@ -1,0 +1,29 @@
+/*Tarjetas con Sombra*/
+curriculum-vitae {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "titol titol"
+        "personales resum"
+        "estudis profesionals"
+        "habilitats profesionals";
+    gap: 25px;
+    padding: 30px;
+    background: #fafafa;
+    font-family: "Poppins", sans-serif;
+}
+
+curriculum-vitae > div {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#divTitol {
+    grid-area: titol;
+    background: none;
+    box-shadow: none;
+    text-align: center;
+    font-size: 2.2rem;
+}

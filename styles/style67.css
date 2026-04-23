@@ -1,0 +1,43 @@
+curriculum-vitae {
+    display: grid;
+    gap: 20px;
+    padding: 25px;
+    font-family: "Inter", sans-serif;
+}
+
+/* Ocultar secciones vacías */
+curriculum-vitae > div:empty {
+    display: none;
+}
+
+/* Áreas del grid */
+div[name="divTitol"] { grid-area: titol; }
+div[name="dades-personals"] { grid-area: personales; }
+div[name="divresum-profesional"] { grid-area: resum; }
+div[name="dades-estudis"] { grid-area: estudis; }
+div[name="dades-profesionals"] { grid-area: profesionals; }
+div[name="divhabilitats"] { grid-area: habilitats; }
+
+/*Deep Green Executive*/
+curriculum-vitae {
+    background: #f4fbf6;
+    grid-template-columns: 260px 1fr;
+    grid-template-areas:
+        "titol titol"
+        "personales resum"
+        "personales profesionals"
+        "estudis habilitats";
+}
+
+div[name="divTitol"] {
+    background: #145a32;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+div[name="dades-personals"] {
+    background: #1e8449;
+    color: white;
+    padding: 20px;
+}

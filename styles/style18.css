@@ -1,0 +1,34 @@
+/* revista rojo impacto */
+curriculum-vitae {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 8px;
+	font-family: "Garamond", serif;
+	background: #fdecea;
+	padding: 10px;
+}
+
+div[name="divTitol"] {
+	grid-column: 1 / 4;
+	background: #c0392b;
+	color: white;
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+	border-bottom: 4px solid #922b21;
+}
+
+div[name="dades-personals"],
+div[name="divhabilitats"] {
+	background: #f5b7b1;
+	border-radius: 10px;
+	padding: 15px;
+}
+
+div[name="dades-profesionals"],
+div[name="dades-estudis"] {
+	grid-column: 2 / 4;
+	background: #f9e79f;
+	border-radius: 10px;
+	padding: 15px;
+}

@@ -1,0 +1,15 @@
+/* cards */
+curriculum-vitae {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+section {
+    background: #f7f7f7;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+section:empty { display: none; }

@@ -1,0 +1,44 @@
+/* creativa */
+curriculum-vitae {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+section {
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+div[name="divTitol"],
+div[name="dades-personals"],
+div[name="dades-estudis"],
+div[name="dades-profesionals"],
+div[name="divresum-profesional"],
+div[name="divhabilitats"] {
+  padding: 10px;
+}
+
+div[name="divTitol"] {
+  background: #3498db;
+}
+div[name="dades-personals"] {
+  background: #3498db;
+}
+div[name="dades-estudis"] {
+  background: #9b59b6;
+}
+div[name="dades-profesionals"] {
+  background: #e67e22;
+}
+div[name="divresum-profesional"] {
+  background: #6722e6;
+}
+div[name="divhabilitats"] {
+  background: #2ecc71;
+}
+
+section:empty {
+  display: none;
+}

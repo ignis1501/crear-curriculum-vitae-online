@@ -1,0 +1,43 @@
+/* dev */
+curriculum-vitae {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    "titol titol"
+    "personales resum"
+    "personales estudis"
+    "habilitats profesionals";
+  gap: 20px;
+  padding: 20px;
+  font-family: "Roboto Mono", monospace;
+}
+
+/* Asignar cada sección a su área */
+#divTitol {
+  grid-area: titol;
+}
+
+#dades-personales {
+  grid-area: personales;
+}
+
+#divresum-profesional {
+  grid-area: resum;
+}
+
+#dades-estudis {
+  grid-area: estudis;
+}
+
+#dades-profesionals {
+  grid-area: profesionals;
+}
+
+#divhabilitats {
+  grid-area: habilitats;
+}
+
+/* Ocultar secciones vacías */
+curriculum-vitae > div:empty {
+  display: none;
+}

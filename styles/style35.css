@@ -1,0 +1,12 @@
+/* Creativa */
+curriculum-vitae {
+  border-left: 8px solid #ff6b6b;
+  padding: 20px;
+  font-family: Poppins, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* section:empty { display: none; } */

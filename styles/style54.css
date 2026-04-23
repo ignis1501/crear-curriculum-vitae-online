@@ -1,0 +1,21 @@
+/* dev */
+#container {
+  background: #1e1e1e;
+}
+
+curriculum-vitae {
+  background: #1e1e1e;
+  color: #dcdcdc;
+  font-family: "Consolas", monospace;
+  padding: 20px;
+}
+
+section {
+  border-left: 3px solid #4ec9b0;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+section:empty {
+  display: none;
+}
